@@ -9,25 +9,6 @@ import AllListings from './AllListings.js';
 import Buy from './Buy.js';
 
 import './App.css'
-//render all items
-let renderHome = () => {
-    return <Home />; //do we need props?
-}
-
-let renderAccount = () => {
-    return <Account />
-}
-
-let renderBuy = () => {
-    return <Buy />
-}
-
-let renderCreateListing = () => {
-    return <Create />
-}
-let renderAllListings = () => {
-    return <AllListings />
-}
 
 class App extends Component {
     constructor() {
@@ -36,6 +17,25 @@ class App extends Component {
             username: undefined,
         }
     }
+    renderHome = () => {
+        return <Home />; //do we need props?
+    }
+    
+    renderAccount = () => {
+        return <Account />
+    }
+    
+    renderBuy = () => {
+        return <Buy />
+    }
+    
+    renderAllListings = () => {
+        return <AllListings />
+    }
+
+    renderCreateListing = (routeProps) => {
+        return <Create username={this.state.username} historyPush={routeProps.history.push} />
+    }
 
     setUsername = (username) => {
         this.setState({ username }) //is equivalent to username: username
@@ -43,21 +43,25 @@ class App extends Component {
 
     renderLogin = (routeProps) => {
         //console.log(routeProps)
-        return <Login setUsername={this.setUsername} historyPush={routeProps.history.push} />
+        return (
+            <div>
+                <Login setUsername={this.setUsername} historyPush={routeProps.history.push} />
+             </div>
+        )
     }
 
     render() {
-
+        console.log(this.state)
         return (
             <BrowserRouter>
                 {(this.state.username === undefined) ?
                     <Route path='/' render={this.renderLogin} /> : (
                         <div>
-                            <Route exact={true} path='/home' render={renderHome} />
-                            <Route exact={true} path='/account' render={renderAccount} />
-                            <Route exact={true} path='/buy' render={renderBuy} />
-                            <Route exact={true} path='/create' render={renderCreateListing} />
-                            <Route exact={true} path='/allListings' render={renderAllListings} />
+                            <Route exact={true} path='/home' render={this.renderHome} />
+                            <Route exact={true} path='/account' render={this.renderAccount} />
+                            <Route exact={true} path='/buy/:key' render={this.renderBuy} />
+                            <Route exact={true} path='/create' render={this.renderCreateListing} />
+                            <Route exact={true} path='/allListings' render={this.renderAllListings} />
                         </div>
                     )}
             </BrowserRouter>
