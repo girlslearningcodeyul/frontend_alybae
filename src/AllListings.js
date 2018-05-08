@@ -10,7 +10,8 @@ class AllListings extends Component {
             sellerId: "",
             price: 0,
             description: "",
-            name: ""
+            name: "",
+            loaded: false
         }
     }
 
@@ -19,23 +20,20 @@ class AllListings extends Component {
     }
 
     handleListings = () => {
-        let body = JSON.stringify({
-            sellerId: this.props.username,//the name of the seller
-            price: this.state.price,
-            description: this.state.description,
-            name: this.state.name
-        })
-
-        fetch('/allItems', { method: "POST", body: body })
+        fetch('/allItems')
             .then(response => response.text())
             .then(responseBody => {
                 let listings = JSON.parse(responseBody);
                 console.log(listings);
-                this.setState({ listings });
+                this.setState({ listings, loaded: true });
             })
     }
 
     render() {
+        if (!this.state.loaded) return (
+        <div><h1>Loading ...</h1> </div>);
+
+
         var mapContents = contents => <li>{contents.sellerId} <br />
             {contents.price} <br />
             {contents.description}<br />
@@ -58,6 +56,7 @@ class AllListings extends Component {
                 </div>
             </div>
         )
+
     }
 }
 
