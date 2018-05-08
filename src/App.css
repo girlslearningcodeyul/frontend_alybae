@@ -1,26 +1,40 @@
 .title{
   font-style: italic;
-  position: fixed;
+  position: absolute;
   left: 350px;
   top: 0px;
   color: #93B4FF
 }
 .login{
-  background-color: aqua;
+  background-color: rgb(10,200,38, 0.7);
+  border-radius: 5px;
   position: relative;
-  top: 200px;
-  left: 200px;
+  top: 350px;
+  left: 250px;
+  width: 25%;
 }
 
 .signUp{
-  background-color: rgb(28, 202, 28);
+  background-color: rgb(255,51,219,0.7);
+  border-radius: 5px;
   position: relative;
-  top: 300px;
-  left: 300px;
-  width: 75%;
+  top: 275px;
+  left: 800px;
+  width: 25%;
 }
 .banner{
   background-image: url(images/hanging_lights.jpg);
   background-position-y: 35%;
+  min-width: 1440px;
+  border-radius: 400%/100px 100px 0 0;
+}
+.wall{
+  background-image: url(images/wall.jpg);
+  position: fixed;
+  height: 650px;
+  width: 100%;
+  bottom: 0px;
+  background-position-y: 67%;
+  background-position-X: 85%;
 }
 

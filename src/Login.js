@@ -124,19 +124,19 @@ class Login extends Component {
         }
         else {
             return (
-                <html>
-                    <body className="banner">
-                        <div> </div>
-                        <div><h1 className="title">AlyBae</h1>
-                            <div>
-                                <div className="login">
-                                    {this.renderLoginForm()}</div>
-                                <div className="signUp">
-                                    {this.renderCreateAccountForm()}</div>
-                            </div>
+
+                <body className="banner">
+                    <div className="wall"> </div>
+                    <div><h1 className="title">AlyBae</h1>
+                        <div>
+                            <div className="login">
+                                {this.renderLoginForm()}</div>
+                            <div className="signUp">
+                                {this.renderCreateAccountForm()}</div>
                         </div>
-                    </body>
-                </html>
+                    </div>
+                </body>
+
             );
         }
     }
