@@ -6,21 +6,27 @@
   color: #93B4FF
 }
 .login{
-  background-color: rgb(10,200,38, 0.7);
+  background-color: rgb(89,191,249, 0.85);
+  font-family: comic sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   border-radius: 5px;
   position: relative;
-  top: 350px;
-  left: 250px;
-  width: 25%;
+  top: 325px;
+  left: 275px;
+  width: 20%;
 }
 
 .signUp{
-  background-color: rgb(255,51,219,0.7);
+  background-color: rgb(89,191,249, 0.85);
+  font-family: comic sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   border-radius: 5px;
   position: relative;
-  top: 275px;
-  left: 800px;
-  width: 25%;
+  top: 230px;
+  left: 875px;
+  width: 20%;
 }
 .banner{
   background-image: url(images/hanging_lights.jpg);
@@ -31,7 +37,7 @@
 .wall{
   background-image: url(images/wall.jpg);
   position: fixed;
-  height: 650px;
+  height: 615px;
   width: 100%;
   bottom: 0px;
   background-position-y: 67%;
