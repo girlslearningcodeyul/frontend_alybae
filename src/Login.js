@@ -78,16 +78,16 @@ class Login extends Component {
 
 
     renderLoginForm = () => {
-        return (<div className="loginDiv"> login:
+        return (<div className="loginDiv"> Login:
           <form onSubmit={this.handleLoginSubmit}>
-                <div>username:
+                <div>Username:
             <input type="text"
                         onChange={this.handleUsernameChange}
                         value={this.inputUsernameValue}>
                     </input>
                 </div>
                 <div>
-                    password:
+                    Password:
             <input type="text"
                         onChange={this.handlePasswordChange}
                         value={this.inputPasswordValue}>
@@ -99,16 +99,16 @@ class Login extends Component {
     }
 
     renderCreateAccountForm = () => {
-        return (<div className="accountDiv"> sign up:
+        return (<div> Sign Up:
         <form onSubmit={this.handleCreateAccount}>
-                <div>new username:
+                <div>New Username:
               <input type="text"
                         onChange={this.handleUsernameCreate}
                         value={this.inputUsernameCreate}>
                     </input>
                 </div>
                 <div>
-                    new password:
+                    New Password:
           <input type="text"
                         onChange={this.handlePasswordCreate}
                         value={this.inputPasswordCreate}>
@@ -124,14 +124,19 @@ class Login extends Component {
         }
         else {
             return (
-                <div><h1>AlyBae</h1>
-                    <div className="accountsPage">
-                        <div className="login">
-                            {this.renderLoginForm()}</div>
-                        <div className="create">
-                            {this.renderCreateAccountForm()}</div>
+
+                <body className="banner">
+                    <div className="wall"> </div>
+                    <div><h1 className="title">AlyBae</h1>
+                        <div>
+                            <div className="login">
+                                {this.renderLoginForm()}</div>
+                            <div className="signUp">
+                                {this.renderCreateAccountForm()}</div>
+                        </div>
                     </div>
-                </div>
+                </body>
+
             );
         }
     }
