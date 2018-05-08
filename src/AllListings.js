@@ -35,22 +35,18 @@ class AllListings extends Component {
 
 
         var mapContents = contents =>
-            <li>
+            <li className="listingStyle">
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
             </li>
 
-        let allListings = this.state.listings.map(mapContents)
+        let allListings = this.state.listings.map(mapContents);
 
         return (
             <div>
-                <div className="allListings">
-                    <ul>
-                        {allListings}
-                    </ul>
-                </div>
+                <ul>{allListings}</ul>
                 <div>
                     <Link to='/home'>Back</Link>
                 </div>

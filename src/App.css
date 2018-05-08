@@ -44,3 +44,19 @@
   background-position-X: 85%;
 }
 
+.listingStyle{
+  display:inline-block;
+  border:1px solid #000;
+  padding:20px;
+  width: 200px;
+  border-radius: 5px;
+  height: 100px;
+  margin-top: 200px;
+  margin-left: 200px;
+  overflow: auto;
+
+}
+
+ul{
+  list-style-type: none;
+}
