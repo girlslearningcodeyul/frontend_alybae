@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 class Account extends Component {
-    
+
     itemsBought = () => {
         fetch('/itemsBought')
             .then(response => response.text())
@@ -12,7 +13,7 @@ class Account extends Component {
     }
     render() {
         return (
-            <div></div>
+            <Link to ='/home'>Back</Link>
         )
     }
 }

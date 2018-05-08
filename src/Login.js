@@ -47,6 +47,7 @@ class Login extends Component {
                 if (sessionID) {
                     this.setState({ sessionID: sessionID })
                     this.props.setUsername(this.state.inputUsernameValue); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
+                    this.props.historyPush('/home');
                 }
                 else {
                     this.setState({ loginFailed: "true" })
@@ -69,6 +70,7 @@ class Login extends Component {
                 } else {
                     let username = parsed.username
                     this.props.setUsername(username); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
+                    this.props.historyPush('/home');
                 }
             })
     }
