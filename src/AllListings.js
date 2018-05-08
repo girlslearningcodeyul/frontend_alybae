@@ -31,13 +31,16 @@ class AllListings extends Component {
 
     render() {
         if (!this.state.loaded) return (
-        <div><h1>Loading ...</h1> </div>);
+            <div><h1>Loading ...</h1> </div>);
 
 
-        var mapContents = contents => <li>{contents.sellerId} <br />
-            {contents.price} <br />
-            {contents.description}<br />
-            {contents.name}</li>
+        var mapContents = contents =>
+            <li>
+                Name: {contents.name} <br />
+                Description: {contents.description}<br />
+                Price: {contents.price} <br />
+                Sold by: {contents.sellerId} <br />
+            </li>
 
         let allListings = this.state.listings.map(mapContents)
 
