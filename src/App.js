@@ -9,7 +9,7 @@ import AllListings from './AllListings.js';
 import Buy from './Buy.js';
 
 import './App.css'
-
+//render all items
 let renderHome = () => {
     return <Home />; //do we need props?
 }
