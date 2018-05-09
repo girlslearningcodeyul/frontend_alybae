@@ -30,7 +30,7 @@ class Account extends Component {
             .then((items) => {
                 console.log(items);
                 this.setState({ itemsSold: JSON.parse(items) })
-                
+
             })
     }
 
@@ -55,21 +55,22 @@ class Account extends Component {
 
         return (
             <div>
-                Items Bought:
-                <div>
-                    <ul>
-                        {itemsBought}
-                    </ul>
-                </div>
-
-                Items Sold:
-                <div>
-                    <ul>
-                        {itemsSold}
-                    </ul>
-                </div>
-
                 <Link to='/home'>Back</Link>
+                <div>
+                    Items Bought:
+                <div>
+                        <ul>
+                            {itemsBought}
+                        </ul>
+                    </div>
+
+                    Items Sold:
+                <div>
+                        <ul>
+                            {itemsSold}
+                        </ul>
+                    </div>
+                </div>
             </div>
         )
     }

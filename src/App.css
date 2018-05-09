@@ -62,7 +62,10 @@ _____________________________________________________________
 
 .input{
   color:white;
+}
+.inputLogin{
   display:block;
+  color:white;
   margin:20px auto;
   padding:15px;
   background:rgba(0,0,0,0.4);
@@ -88,9 +91,10 @@ _____________________________________________________________
   background-position-X: 85%;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.inputLogin::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
   font-family: Helvetica, sans-serif;
+  font-style: none;
 }
 
 span{
@@ -171,4 +175,47 @@ input::placeholder {
 .searchBarHighRange{
   margin-left: 35px;
   margin-top:5px;
+}
+
+/* 
+the following CSS is fir the buy button animation
+_____________________________________________________________
+*/
+.buyButton{
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #000;
+  text-align: left;
+  font-size: 38px;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.buyButton span{
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.buyButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buyButton:hover span {
+  padding-right: 25px;
+}
+
+.buyButton:hover span:after {
+  opacity: 1;
+  right: 0;
 }
