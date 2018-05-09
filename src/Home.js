@@ -28,17 +28,21 @@ class Home extends Component {
 
         if (!this.state.loaded) return (
             <div><h1>Loading ...</h1> </div>);
-
+            
         var mapContents = contents =>
+        
             <li className="listingStyle">
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
+                
                 <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
+                
             </li>
 
         let fourListings = this.state.fourRandomListings.map(mapContents);
+        
 
         return (
             <body>
