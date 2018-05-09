@@ -30,7 +30,7 @@ class Home extends Component {
             <div><h1>Loading ...</h1> </div>);
 
         var mapContents = contents =>
-            <li className="fourListings">
+            <li className="listingStyle">
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />

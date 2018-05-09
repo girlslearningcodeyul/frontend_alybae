@@ -95,7 +95,7 @@ span{
 the following CSS is or the items for sale
 _____________________________________________________________
 */
-.fourListings, .listingStyle, .itemsSold, .itemsBought{
+.listingStyle, .itemsSold, .itemsBought{
   display:inline-block;
   border:1px solid #000;
   padding-left:20px;
