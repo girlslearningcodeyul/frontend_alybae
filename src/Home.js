@@ -45,7 +45,7 @@ class Home extends Component {
         
 
         return (
-            <body>
+            <div>
                 <div>
                     <div>
                         <Link to='/account'>go to your account</Link>
@@ -63,7 +63,7 @@ class Home extends Component {
                         </ul>
                     </div>
                 </div>
-            </body>)
+            </div>)
     }
 }
 

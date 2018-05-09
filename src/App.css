@@ -60,6 +60,9 @@ _____________________________________________________________
   font-family: Helvetica, sans-serif;
 }
 
+.input{
+  color:white;
+}
 .inputLogin{
   display:block;
   color:white;

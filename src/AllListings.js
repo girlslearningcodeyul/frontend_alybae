@@ -9,7 +9,10 @@ class AllListings extends Component {
         this.state = {
             loaded: false,
             listings: [],
-            searchResults: []
+            searchResults: [],
+            kw: "",
+            lowPriceInput: "0",
+            highPriceInput: Infinity,
         }
     }
 
@@ -31,28 +34,32 @@ class AllListings extends Component {
     searchItemsByName = (event) => {
         let listings = this.state.listings;
         let string = event.target.value;
-        let filteredListings = listings.filter(listing => listing.name.includes(string))
-        this.setState({ searchResults: filteredListings })
+    //    let filteredListings = listings.filter(listing => listing.name.includes(string))
+        this.setState({ kw: string }, () => this.filterListings());
     }
     searchItemsLowPriceRange = (event) => {
         let listings = this.state.listings;
         let lowPriceInput = event.target.value;
-        let filteredLowPriceListings = listings.filter(listing => lowPriceInput <= listing.price)
-        console.log(filteredLowPriceListings)
-        this.setState({ searchResults: filteredLowPriceListings })
+       // let filteredLowPriceListings = listings.filter(listing => lowPriceInput <= listing.price)
+        this.setState({lowPriceInput}, () => this.filterListings());
     }
     searchItemsHighPriceRange = (event) => {
         let listings = this.state.listings;
         let highPriceInput = event.target.value;
-        let filteredHighPriceListings = listings.filter(listing => highPriceInput >= listing.price)
-        console.log(filteredHighPriceListings)
-        this.setState({ searchResults: filteredHighPriceListings })
+    //    let filteredHighPriceListings = listings.filter(listing => highPriceInput >= listing.price)
+        this.setState({highPriceInput: highPriceInput === "" ? Infinity:highPriceInput}, () => this.filterListings())
+    }
+    filterListings = () => {
+        console.log(this.state)
+        let filteredListings = this.state.listings.filter(
+            listing => Number(this.state.lowPriceInput) <= listing.price && 
+                       Number(this.state.highPriceInput) >= listing.price && 
+                       listing.name.includes(this.state.kw))
+        console.log(this.state.kw, filteredListings)
+        this.setState({searchResults: filteredListings});
     }
     render() {
-
-        if (!this.state.loaded) return (
-            <div><h1>Loading ...</h1> </div>);
-
+        if (!this.state.loaded) return (<div><h1>Loading ...</h1> </div>);
 
         var mapContents = contents =>
             <li className="listingStyle">
@@ -60,7 +67,7 @@ class AllListings extends Component {
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
+                <Link to={"/buy/" + contents.itemId}> Buy this</Link>
             </li >
 
         let allListings = this.state.searchResults.map(mapContents)
@@ -70,6 +77,9 @@ class AllListings extends Component {
             <div>
                 <div>
                     <Link to='/home'>Back</Link>
+                </div>
+                <div>
+                    <Link to='/buy'>Buy this too</Link>
                 </div>
                 <div className="searchBar">
                     <input type="text"
@@ -93,6 +103,12 @@ class AllListings extends Component {
                     <ul>
                         {allListings}
                     </ul>
+                </div>
+                <div>
+                    <Link to='/home'>Back</Link>
+                </div>
+                <div>
+                    <Link to='/buy'>Buy this too</Link>
                 </div>
             </div>
         )

@@ -121,7 +121,7 @@ class Login extends Component {
         else {
             return (
 
-                <body className="banner">
+                <div className="banner">
                     <div className="wall"> </div>
                     <div><h1 className="title">AlyBae</h1>
                         <div>
@@ -131,7 +131,7 @@ class Login extends Component {
                                 {this.renderCreateAccountForm()}</div>
                         </div>
                     </div>
-                </body>
+                </div>
 
             );
         }
