@@ -43,7 +43,7 @@ class AllListings extends Component {
 
 
         var mapContents = contents =>
-            <li>
+            <li className="listingStyle">
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
@@ -70,6 +70,7 @@ class AllListings extends Component {
                 <div>
                     <Link to='/buy'>Buy this too</Link>
                 </div>
+                <ul>{allListings}</ul>
             </div>
         )
 
