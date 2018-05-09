@@ -28,7 +28,7 @@ class App extends Component {
     renderBuy = (routeProps) => {
         console.log(routeProps);
         let key = routeProps.match.params.key;
-        return <Buy itemId={key} username={this.state.username}/>
+        return <Buy itemId={key} historyPush={routeProps.history.push}/>
     }
     
     renderAllListings = () => {
@@ -53,7 +53,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return (
             <BrowserRouter>
                 {(this.state.username === undefined) ?

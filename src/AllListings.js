@@ -26,7 +26,6 @@ class AllListings extends Component {
             .then(responseBody => {
                 let listings = JSON.parse(responseBody);
 
-
                 this.setState({ listings, searchResults: listings, loaded: true });
             })
     }
@@ -77,9 +76,6 @@ class AllListings extends Component {
             <div>
                 <div>
                     <Link to='/home'>Back</Link>
-                </div>
-                <div>
-                    <Link to='/buy'>Buy this too</Link>
                 </div>
                 <div className="searchBar">
                     <input type="text"
