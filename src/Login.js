@@ -80,13 +80,13 @@ class Login extends Component {
     renderLoginForm = () => {
         return (<div className="loginDiv"> Login:
           <form onSubmit={this.handleLoginSubmit}>
-                <div><input className="input" type="text" placeholder="username"
+                <div><input className="inputLogin" type="text" placeholder="username"
                     onChange={this.handleUsernameChange}
                     value={this.inputUsernameValue}>
                 </input>
                 </div>
                 <div>
-                    <input className="input" type="text" placeholder="password"
+                    <input className="inputLogin" type="text" placeholder="password"
                         onChange={this.handlePasswordChange}
                         value={this.inputPasswordValue}>
                     </input>
@@ -99,13 +99,13 @@ class Login extends Component {
     renderCreateAccountForm = () => {
         return (<div> <span>not a member?</span> Sign Up:
         <form onSubmit={this.handleCreateAccount}>
-                <div><input className="input" type="text" placeholder=" new username"
+                <div><input className="inputLogin" type="text" placeholder=" new username"
                     onChange={this.handleUsernameCreate}
                     value={this.inputUsernameCreate}>
                 </input>
                 </div>
                 <div>
-                    <input className="input" type="text" placeholder=" new password"
+                    <input className="inputLogin" type="text" placeholder=" new password"
                         onChange={this.handlePasswordCreate}
                         value={this.inputPasswordCreate}>
                     </input>

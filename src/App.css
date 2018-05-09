@@ -60,7 +60,7 @@ _____________________________________________________________
   font-family: Helvetica, sans-serif;
 }
 
-.input{
+.inputLogin{
   display:block;
   color:white;
   margin:20px auto;
@@ -88,9 +88,10 @@ _____________________________________________________________
   background-position-X: 85%;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.inputLogin::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
   font-family: Helvetica, sans-serif;
+  font-style: none;
 }
 
 span{
