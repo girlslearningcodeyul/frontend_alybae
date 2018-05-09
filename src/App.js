@@ -22,7 +22,7 @@ class App extends Component {
     }
     
     renderAccount = () => {
-        return <Account />
+        return <Account username={this.state.username} />
     }
     
     renderBuy = () => {

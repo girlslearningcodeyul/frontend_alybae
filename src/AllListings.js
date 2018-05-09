@@ -46,13 +46,14 @@ class AllListings extends Component {
 
         return (
             <div>
-                <ul>{allListings}</ul>
+
                 <div>
                     <Link to='/home'>Back</Link>
                 </div>
                 <div>
                     <Link to='/buy'>Buy this too</Link>
                 </div>
+                <ul>{allListings}</ul>
             </div>
         )
 

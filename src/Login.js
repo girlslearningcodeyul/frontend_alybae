@@ -80,41 +80,37 @@ class Login extends Component {
     renderLoginForm = () => {
         return (<div className="loginDiv"> Login:
           <form onSubmit={this.handleLoginSubmit}>
-                <div>Username:
-            <input type="text"
-                        onChange={this.handleUsernameChange}
-                        value={this.inputUsernameValue}>
-                    </input>
+                <div><input className="input" type="text" placeholder="username"
+                    onChange={this.handleUsernameChange}
+                    value={this.inputUsernameValue}>
+                </input>
                 </div>
                 <div>
-                    Password:
-            <input type="text"
+                    <input className="input" type="text" placeholder="password"
                         onChange={this.handlePasswordChange}
                         value={this.inputPasswordValue}>
                     </input>
                 </div>
-                <input type="submit" ></input>
+                <input className="loginSubmitButton" type="submit" ></input>
             </form>
         </div>)
     }
 
     renderCreateAccountForm = () => {
-        return (<div> Sign Up:
+        return (<div> <span>Not a member?</span> Sign Up:
         <form onSubmit={this.handleCreateAccount}>
-                <div>New Username:
-              <input type="text"
-                        onChange={this.handleUsernameCreate}
-                        value={this.inputUsernameCreate}>
-                    </input>
+                <div><input className="input" type="text" placeholder=" new username"
+                    onChange={this.handleUsernameCreate}
+                    value={this.inputUsernameCreate}>
+                </input>
                 </div>
                 <div>
-                    New Password:
-          <input type="text"
+                    <input className="input" type="text" placeholder=" new password"
                         onChange={this.handlePasswordCreate}
                         value={this.inputPasswordCreate}>
                     </input>
                 </div>
-                <input type="submit" ></input>
+                <input className="createSubmitButton" type="submit" ></input>
             </form>
         </div>)
     }
