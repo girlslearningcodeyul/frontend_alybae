@@ -112,12 +112,12 @@ _____________________________________________________________
   padding-right:20px;
   padding-top:200px;
   padding-bottom:20px;
-  width: 200px;
+  width: 250px;
   border-radius: 5px;
-  height: 100px;
-  margin-top: 200px;
+  height: 150px;
+  margin-top: 100px;
   margin-left: 200px;
-  overflow: auto;
+  overflow: visible;
   text-shadow:0 1px 1px rgba(0,0,0,.4); 
   border:2px dashed #F7EEEE;
   box-shadow:0 10px 25px 20px #518C96;
@@ -244,3 +244,41 @@ transition: 0.5s;
   opacity: 1;
   right: 0;
 }
+
+button{
+border-radius: 4px;
+background-color: #f4511e;
+border: none;
+color: #000;
+text-align: left;
+font-size: 38px;
+padding-left: 20px;
+padding-right: 30px;
+padding-bottom: 10px;
+transition: all 0.5s;
+cursor: pointer;
+}
+button span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  }
+  
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+button:hover span {
+    padding-right: 25px;
+  }
+  
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
