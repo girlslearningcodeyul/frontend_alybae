@@ -1,3 +1,8 @@
+body{
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+}
+
 .title{
   font-style: italic;
   position: absolute;
@@ -47,6 +52,7 @@ span{
   margin:20px auto;
   display:block;
   cursor:pointer;
+  font-family: Helvetica, sans-serif;
 }
 
 .banner{
@@ -71,7 +77,9 @@ span{
   background:rgba(0,0,0,0.4);
   color:#fff;
   border:0;
+  font-family: Helvetica, sans-serif;
 }
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 
