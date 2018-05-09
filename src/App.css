@@ -11,23 +11,10 @@ body{
   color: #93B4FF
 }
 
-span{
-  font-size: 15px;
-}
-.signUp { 
-  color:white;
-  text-align: center;
-  display: inline-block;
-  background:rgba(0,0,0,0.3);
-  font-size: 30px;
-  font-weight: bold;
-  border-radius: 5px;
-  position: relative;
-  top: 325px;
-  left: 575px;
-  width: 25%;
-}
-
+/* 
+the following CSS is or the login/create account landing page
+_____________________________________________________________
+*/
 .login{
   color:white;
   text-align: center;
@@ -39,7 +26,25 @@ span{
   top: 325px;
   left: 275px;
   width:25%;
+  height: 300px;
   background:rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+.signUp { 
+  color:white;
+  text-align: center;
+  display: inline-block;
+  background:rgba(0,0,0,0.3);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: 325px;
+  left: 575px;
+  width: 25%;  
+  height: 300px;
+  padding: 20px;
 }
 
 .loginSubmitButton, .createSubmitButton{
@@ -55,6 +60,16 @@ span{
   font-family: Helvetica, sans-serif;
 }
 
+.input{
+  display:block;
+  margin:20px auto;
+  padding:15px;
+  background:rgba(0,0,0,0.4);
+  border:0;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+}
+
 .banner{
   background-image: url(images/hanging_lights.jpg);
   background-position-y: 35%;
@@ -63,6 +78,7 @@ span{
 }
 .wall{
   background-image: url(images/wall.jpg);
+  background-repeat: no-repeat;
   position: fixed;
   height: 615px;
   width: 100%;
@@ -70,23 +86,21 @@ span{
   background-position-y: 67%;
   background-position-X: 85%;
 }
-.input{
-  display:block;
-  margin:20px auto;
-  padding:15px;
-  background:rgba(0,0,0,0.4);
-  color:#fff;
-  border:0;
-  font-family: Helvetica, sans-serif;
-  letter-spacing: 1.5px;
-}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
-
+  color: #ccc;
+  font-family: Helvetica, sans-serif;
 }
 
-.listingStyle{
+span{
+  font-size: 15px;
+}
+
+/* 
+the following CSS is or the items for sale
+_____________________________________________________________
+*/
+.listingStyle, .itemsSold, .itemsBought{
   display:inline-block;
   border:1px solid #000;
   padding-left:20px;
@@ -115,6 +129,7 @@ ul{
   list-style-type: none;
 }
 
+<<<<<<< HEAD
 .itemsSold {
   display:inline-block;
   border:1px solid #000;
@@ -157,3 +172,5 @@ input::placeholder {
   margin-left: 35px;
   margin-top:5px;
 }
+=======
+>>>>>>> ff30c7eb4d76d81cf1c570dd6dab4506f30f9c90

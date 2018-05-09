@@ -25,8 +25,10 @@ class App extends Component {
         return <Account username={this.state.username} />
     }
     
-    renderBuy = () => {
-        return <Buy />
+    renderBuy = (routeProps) => {
+        console.log(routeProps);
+        let key = routeProps.match.params.key;
+        return <Buy itemId={key} />
     }
     
     renderAllListings = () => {
@@ -59,7 +61,7 @@ class App extends Component {
                         <div>
                             <Route exact={true} path='/home' render={this.renderHome} />
                             <Route exact={true} path='/account' render={this.renderAccount} />
-                            <Route exact={true} path='/buy/:key' render={this.renderBuy} />
+                            <Route exact={true} path='/buy/:key' render={this.renderBuy} /> {/* key is a named parameter: https://www.npmjs.com/package/path-to-regexp*/}
                             <Route exact={true} path='/create' render={this.renderCreateListing} />
                             <Route exact={true} path='/allListings' render={this.renderAllListings} />
                         </div>
