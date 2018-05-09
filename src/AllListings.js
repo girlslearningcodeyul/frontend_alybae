@@ -28,13 +28,25 @@ class AllListings extends Component {
             })
     }
 
-    searchItems = (event) => {
-        let listings = this.state.listings
+    searchItemsByName = (event) => {
+        let listings = this.state.listings;
         let string = event.target.value;
-        console.log(string)
         let filteredListings = listings.filter(listing => listing.name.includes(string))
-        console.log(filteredListings)
         this.setState({ searchResults: filteredListings })
+    }
+    searchItemsLowPriceRange = (event) => {
+        let listings = this.state.listings;
+        let lowPriceInput = event.target.value;
+        let filteredLowPriceListings = listings.filter(listing => lowPriceInput <= listing.price)
+        console.log(filteredLowPriceListings)
+        this.setState({searchResults:filteredLowPriceListings})
+    }
+    searchItemsHighPriceRange = (event) => {
+        let listings = this.state.listings;
+        let highPriceInput = event.target.value;
+        let filteredHighPriceListings = listings.filter(listing => highPriceInput >= listing.price)
+        console.log(filteredHighPriceListings)
+        this.setState({searchResults:filteredHighPriceListings})
     }
     render() {
 
@@ -55,8 +67,28 @@ class AllListings extends Component {
 
         return (
             <div>
+                <div>
+                    <Link to='/home'>Back</Link>
+                </div>
+                <div>
+                    <Link to='/buy'>Buy this too</Link>
+                </div>
                 <div className="searchBar">
-                    <input type="text" placeholder="search here" onChange={this.searchItems}>
+                    <input type="text"
+                        placeholder="search by name!"
+                        onChange={this.searchItemsByName}>
+                    </input>
+                </div>
+                <div className="searchBarLowRange">
+                    <input type="text"
+                        placeholder="Set lowest price"
+                        onChange={this.searchItemsLowPriceRange}>
+                    </input>
+                </div>
+                <div className="searchBarHighRange">
+                    <input type="text"
+                        placeholder="set highest price"
+                        onChange={this.searchItemsHighPriceRange}>
                     </input>
                 </div>
                 <div className="allListings">
@@ -64,16 +96,9 @@ class AllListings extends Component {
                         {allListings}
                     </ul>
                 </div>
-                <div>
-                    <Link to='/home'>Back</Link>
-                </div>
-                <div>
-                    <Link to='/buy'>Buy this too</Link>
-                </div>
-                <ul>{allListings}</ul>
+
             </div>
         )
-
     }
 }
 

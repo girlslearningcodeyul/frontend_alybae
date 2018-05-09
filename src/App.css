@@ -139,3 +139,21 @@ ul{
   font-size: 17px;
   transform: rotate(3deg);
 }
+
+input::placeholder {
+  color: lightskyblue;
+  font-size: 1.2em;
+  font-style: italic;
+}
+.searchBar{
+  margin-left: 15px;
+  margin-top:15px;
+}
+.searchBarLowRange{
+  margin-left: 25px;
+  margin-top:15px;
+}
+.searchBarHighRange{
+  margin-left: 35px;
+  margin-top:5px;
+}
