@@ -78,6 +78,7 @@ span{
   color:#fff;
   border:0;
   font-family: Helvetica, sans-serif;
+  letter-spacing: 1.5px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -112,4 +113,29 @@ span{
 
 ul{
   list-style-type: none;
+}
+
+.itemsSold {
+  display:inline-block;
+  border:1px solid #000;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:200px;
+  padding-bottom:20px;
+  width: 200px;
+  border-radius: 5px;
+  height: 100px;
+  margin-top: 200px;
+  margin-left: 200px;
+  overflow: auto;
+  text-shadow:0 1px 1px rgba(0,0,0,.4); 
+  border:2px dashed #F7EEEE;
+  box-shadow:0 10px 25px 20px #518C96;
+  z-index:-1;
+  -webkit-box-shadow:0 0 30px 2px #479F41;
+  -moz-box-shadow:0 0 30px 2px #479F41;
+  box-shadow: 0 0 30px 2px #479F41;
+  background-color: #9EEBBF;
+  font-size: 17px;
+  transform: rotate(3deg);
 }
