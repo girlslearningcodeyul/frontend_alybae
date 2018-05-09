@@ -7,11 +7,9 @@ class AllListings extends Component {
     constructor() {
         super();
         this.state = {
-            sellerId: "",
-            price: 0,
-            description: "",
-            name: "",
-            loaded: false
+            loaded: false,
+            listings: [],
+            searchResults: []
         }
     }
 
@@ -24,12 +22,22 @@ class AllListings extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let listings = JSON.parse(responseBody);
-                console.log(listings);
-                this.setState({ listings, loaded: true });
+
+
+                this.setState({ listings, searchResults: listings, loaded: true });
             })
     }
 
+    searchItems = (event) => {
+        let listings = this.state.listings
+        let string = event.target.value;
+        console.log(string)
+        let filteredListings = listings.filter(listing => listing.name.includes(string))
+        console.log(filteredListings)
+        this.setState({ searchResults: filteredListings })
+    }
     render() {
+
         if (!this.state.loaded) return (
             <div><h1>Loading ...</h1> </div>);
 
@@ -42,10 +50,15 @@ class AllListings extends Component {
                 Sold by: {contents.sellerId} <br />
             </li>
 
-        let allListings = this.state.listings.map(mapContents)
+        let allListings = this.state.searchResults.map(mapContents)
+
 
         return (
             <div>
+                <div className="searchBar">
+                    <input type="text" placeholder="search here" onChange={this.searchItems}>
+                    </input>
+                </div>
                 <div className="allListings">
                     <ul>
                         {allListings}
