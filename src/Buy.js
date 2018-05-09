@@ -24,10 +24,10 @@ class Buy extends Component {
 
     handleBuy = (e) => {
         e.preventDefault();
-        fetch('/buyItem?itemId='+this.props.itemId+'&userId'+this.props.username)
+        fetch('/buyItem?itemId='+this.props.itemId+'&userId='+this.props.username)
             .then(response => response.text())
             .then(responseBody => {
-                console.log("successfully sent");
+                console.log("successfully sent")
                 this.props.historyPush('/account');
             })
     }
