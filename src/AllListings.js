@@ -78,9 +78,6 @@ class AllListings extends Component {
                 <div>
                     <Link to='/home'>Back</Link>
                 </div>
-                <div>
-                    <Link to='/buy'>Buy this too</Link>
-                </div>
                 <div className="searchBar">
                     <input type="text"
                         placeholder="search by name!"
