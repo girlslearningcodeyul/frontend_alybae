@@ -97,7 +97,7 @@ class Login extends Component {
     }
 
     renderCreateAccountForm = () => {
-        return (<div> <span>Not a member?</span> Sign Up:
+        return (<div> <span>not a member?</span> Sign Up:
         <form onSubmit={this.handleCreateAccount}>
                 <div><input className="input" type="text" placeholder=" new username"
                     onChange={this.handleUsernameCreate}

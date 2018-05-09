@@ -11,23 +11,10 @@ body{
   color: #93B4FF
 }
 
-span{
-  font-size: 15px;
-}
-.signUp { 
-  color:white;
-  text-align: center;
-  display: inline-block;
-  background:rgba(0,0,0,0.3);
-  font-size: 30px;
-  font-weight: bold;
-  border-radius: 5px;
-  position: relative;
-  top: 325px;
-  left: 575px;
-  width: 25%;
-}
-
+/* 
+the following CSS is or the login/create account landing page
+_____________________________________________________________
+*/
 .login{
   color:white;
   text-align: center;
@@ -42,6 +29,20 @@ span{
   background:rgba(0,0,0,0.3);
 }
 
+.signUp { 
+  color:white;
+  text-align: center;
+  display: inline-block;
+  background:rgba(0,0,0,0.3);
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: 325px;
+  left: 575px;
+  width: 25%;
+}
+
 .loginSubmitButton, .createSubmitButton{
   background:#2ecc71;
   border:0;
@@ -53,6 +54,17 @@ span{
   display:block;
   cursor:pointer;
   font-family: Helvetica, sans-serif;
+}
+
+.input{
+  display:block;
+  margin:20px auto;
+  padding:15px;
+  background:rgba(0,0,0,0.4);
+  color:#fff;
+  border:0;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1.5px;
 }
 
 .banner{
@@ -70,23 +82,20 @@ span{
   background-position-y: 67%;
   background-position-X: 85%;
 }
-.input{
-  display:block;
-  margin:20px auto;
-  padding:15px;
-  background:rgba(0,0,0,0.4);
-  color:#fff;
-  border:0;
-  font-family: Helvetica, sans-serif;
-  letter-spacing: 1.5px;
-}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
-
 }
 
-.listingStyle{
+span{
+  font-size: 15px;
+}
+
+/* 
+the following CSS is or the items for sale
+_____________________________________________________________
+*/
+.fourListings, .listingStyle, .itemsSold, .itemsBought{
   display:inline-block;
   border:1px solid #000;
   padding-left:20px;
@@ -115,27 +124,3 @@ ul{
   list-style-type: none;
 }
 
-.itemsSold {
-  display:inline-block;
-  border:1px solid #000;
-  padding-left:20px;
-  padding-right:20px;
-  padding-top:200px;
-  padding-bottom:20px;
-  width: 200px;
-  border-radius: 5px;
-  height: 100px;
-  margin-top: 200px;
-  margin-left: 200px;
-  overflow: auto;
-  text-shadow:0 1px 1px rgba(0,0,0,.4); 
-  border:2px dashed #F7EEEE;
-  box-shadow:0 10px 25px 20px #518C96;
-  z-index:-1;
-  -webkit-box-shadow:0 0 30px 2px #479F41;
-  -moz-box-shadow:0 0 30px 2px #479F41;
-  box-shadow: 0 0 30px 2px #479F41;
-  background-color: #9EEBBF;
-  font-size: 17px;
-  transform: rotate(3deg);
-}

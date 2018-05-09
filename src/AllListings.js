@@ -70,7 +70,6 @@ class AllListings extends Component {
                 <div>
                     <Link to='/buy'>Buy this too</Link>
                 </div>
-                <ul>{allListings}</ul>
             </div>
         )
 

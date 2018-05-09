@@ -6,8 +6,8 @@ class Account extends Component {
     constructor() {
         super();
         this.state = {
-            itemsSold: [], 
-            itemsBought: []
+            itemsBought: [],
+            itemsSold: []
         }
     }
 
@@ -17,9 +17,10 @@ class Account extends Component {
     }
 
     itemsBought = () => {
-        fetch('/getItemsBought?userId=' +this.props.username)
+        fetch('/getItemsBought?userId=' + this.props.username)
             .then(response => response.text())
             .then((items) => {
+                console.log(items);
                 this.setState({ itemsBought: JSON.parse(items) })
             })
     }
@@ -27,8 +28,9 @@ class Account extends Component {
         fetch('/getItemsSold?userId=' + this.props.username)
             .then(response => response.text())
             .then((items) => {
-                this.setState({ itemsSold: JSON.parse(items) })
                 console.log(items);
+                this.setState({ itemsSold: JSON.parse(items) })
+                
             })
     }
 
