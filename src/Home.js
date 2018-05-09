@@ -35,7 +35,7 @@ class Home extends Component {
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link to={"/buy/" + contents.itemId}> Buy this</Link>
+                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
             </li>
 
         let fourListings = this.state.fourRandomListings.map(mapContents);

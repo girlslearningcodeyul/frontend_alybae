@@ -10,7 +10,7 @@ class Buy extends Component {
         this.state = {
             item: {},
             sellerId: "",
-            forSale: false
+            forSale: false //may not be required
         }
     }
     componentDidMount() {
@@ -24,8 +24,9 @@ class Buy extends Component {
     handleBuy = (e) => {
         e.preventDefault();
         let body = JSON.stringify({
-            sellerId: this.props.username,//the name of the seller
-            forSale: this.state.forSale
+            buyerId: this.props.username, //the name of the buyer, which is currently logged in as user
+            sellerId: this.state.sellerId,//the name of the seller
+            forSale: this.state.forSale //may need to remove this
         })
         fetch('/buyItem', { method: "POST", body: body })
             .then(response => response.text())
