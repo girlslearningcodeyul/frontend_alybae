@@ -24,11 +24,7 @@ class Buy extends Component {
 
     handleBuy = (e) => {
         e.preventDefault();
-        let body = JSON.stringify({
-            buyerId: this.props.username, //the name of the buyer, which is currently logged in as user
-            sellerId: this.state.sellerId,//the name of the seller
-        })
-        fetch('/buyItem', { method: "POST", body: body })
+        fetch('/buyItem?itemId='+this.props.itemId+'&userId'+this.props.username)
             .then(response => response.text())
             .then(responseBody => {
                 console.log("successfully sent");

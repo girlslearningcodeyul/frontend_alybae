@@ -28,7 +28,7 @@ class App extends Component {
     renderBuy = (routeProps) => {
         console.log(routeProps);
         let key = routeProps.match.params.key;
-        return <Buy itemId={key} historyPush={routeProps.history.push}/>
+        return <Buy itemId={key} username={this.state.username} historyPush={routeProps.history.push}/>
     }
     
     renderAllListings = () => {
