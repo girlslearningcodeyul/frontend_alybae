@@ -39,14 +39,14 @@ class AllListings extends Component {
         let lowPriceInput = event.target.value;
         let filteredLowPriceListings = listings.filter(listing => lowPriceInput <= listing.price)
         console.log(filteredLowPriceListings)
-        this.setState({searchResults:filteredLowPriceListings})
+        this.setState({ searchResults: filteredLowPriceListings })
     }
     searchItemsHighPriceRange = (event) => {
         let listings = this.state.listings;
         let highPriceInput = event.target.value;
         let filteredHighPriceListings = listings.filter(listing => highPriceInput >= listing.price)
         console.log(filteredHighPriceListings)
-        this.setState({searchResults:filteredHighPriceListings})
+        this.setState({ searchResults: filteredHighPriceListings })
     }
     render() {
 
@@ -60,7 +60,7 @@ class AllListings extends Component {
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link to={"/buy/" + contents.itemId}> Buy this</Link>
+                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
             </li >
 
         let allListings = this.state.searchResults.map(mapContents)
@@ -70,9 +70,6 @@ class AllListings extends Component {
             <div>
                 <div>
                     <Link to='/home'>Back</Link>
-                </div>
-                <div>
-                    <Link to='/buy'>Buy this too</Link>
                 </div>
                 <div className="searchBar">
                     <input type="text"
