@@ -40,7 +40,7 @@ class Home extends Component {
         let fourListings = this.state.fourRandomListings.map(mapContents);
 
         return (
-            <body>
+            <div>
                 <div>
                     <div>
                         <Link to='/account'>go to your account</Link>
@@ -63,7 +63,7 @@ class Home extends Component {
                     </div>
 
                 </div>
-            </body>)
+            </div>)
     }
 }
 
