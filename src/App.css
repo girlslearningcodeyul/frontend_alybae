@@ -158,27 +158,52 @@ ul{
   font-size: 17px;
   transform: rotate(3deg);
 }
+/* these be for the search functionality of the allListings page 
 
+-----------------------------------------------------------------------
+*/
 input::placeholder {
   color: lightskyblue;
   font-size: 1.2em;
   font-style: italic;
 }
+input[type=text]{
+padding: 10px;
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+border-top-color: red;
+border-bottom-color: blueviolet;
+}
 .searchBar{
-  margin-left: 15px;
+  margin-left: 290px;
   margin-top:15px;
+  padding: 10px;
+position: relative;
+
 }
 .searchBarLowRange{
-  margin-left: 25px;
-  margin-top:15px;
+  margin-left: 190px;
+  margin-top: 15px;
+  position:relative;
 }
 .searchBarHighRange{
-  margin-left: 35px;
-  margin-top:5px;
+  margin-left: 410px;
+  margin-top: -35px;
+  position: relative;
+}
+.searchImage{
+  content:url(images/budy.jpg);
+  height: 35px;
+  width: 50px;
+  position: fixed;
+  left: 350px;
+  top: 125px;
+  border-radius: 50%;
 }
 
 /* 
-the following CSS is fir the buy button animation
+the following CSS is for the buy button animation
 _____________________________________________________________
 */
 .buyButton{
