@@ -48,7 +48,8 @@ class AllListings extends Component {
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
-            </li>
+                <Link to={"/buy/" + contents.itemId}> Buy this</Link>
+            </li >
 
         let allListings = this.state.searchResults.map(mapContents)
 
