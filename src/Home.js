@@ -7,15 +7,15 @@ class Home extends Component {
     constructor(){
         super();
         this.state = {
-            fourListings: [],
+            fourRandomListings: [],
             loaded: false
         }
     }
     componentDidMount() {
-        this.handleFourListings();
+        this.handleFourRandomListings();
     }
 
-    handleFourListings = () => {
+    handleFourRandomListings = () => {
         fetch('/home')
             .then(response => response.text())
             .then(responseBody => {
@@ -37,7 +37,7 @@ class Home extends Component {
                 Sold by: {contents.sellerId} <br />
             </li>
 
-        let fourListings = this.state.fourListings.map(mapContents);
+        let fourListings = this.state.fourRandomListings.map(mapContents);
 
         return (
             <body>
