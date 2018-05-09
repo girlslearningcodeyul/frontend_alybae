@@ -97,16 +97,6 @@ class AllListings extends Component {
                         {allListings}
                     </ul>
                 </div>
-<<<<<<< HEAD
-
-=======
-                <div>
-                    <Link to='/home'>Back</Link>
-                </div>
-                <div>
-                    <Link to='/buy'>Buy this too</Link>
-                </div>
->>>>>>> ff30c7eb4d76d81cf1c570dd6dab4506f30f9c90
             </div>
         )
     }

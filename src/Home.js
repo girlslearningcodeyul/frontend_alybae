@@ -4,7 +4,7 @@ import './App.css';
 
 class Home extends Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             fourRandomListings: [],
@@ -19,8 +19,8 @@ class Home extends Component {
         fetch('/home')
             .then(response => response.text())
             .then(responseBody => {
-                let listings = JSON.parse(responseBody);
-                this.setState({ listings, loaded: true });
+                let fourRandomListings = JSON.parse(responseBody);
+                this.setState({ fourRandomListings, loaded: true });
             })
     }
 
@@ -35,6 +35,7 @@ class Home extends Component {
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
+                <Link to={"/buy/" + contents.itemId}> Buy this</Link>
             </li>
 
         let fourListings = this.state.fourRandomListings.map(mapContents);
@@ -57,11 +58,6 @@ class Home extends Component {
                             {fourListings}
                         </ul>
                     </div>
-
-                    <div>
-                        <Link to='/buy'>buy this</Link>
-                    </div>
-
                 </div>
             </body>)
     }
