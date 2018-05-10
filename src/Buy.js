@@ -24,7 +24,7 @@ class Buy extends Component {
 
     handleBuy = (e) => {
         e.preventDefault();
-        fetch('/buyItem?itemId='+this.props.itemId+'&userId='+this.props.username)
+        fetch('/buyItem?itemId=' + this.props.itemId + '&userId=' + this.props.username)
             .then(response => response.text())
             .then(responseBody => {
                 console.log("successfully sent")
@@ -37,16 +37,18 @@ class Buy extends Component {
 
         return (
             <div>
-                <Link to='/home'>Back</Link>
-                {!this.state.item ? <div><h1>Loading...</h1></div> : (
-                    <div className="listingStyle">
-                        Name: {this.state.item.name} <br />
-                        Description: {this.state.item.description}<br />
-                        Price: {this.state.item.price} <br />
-                        Sold by: {this.state.item.sellerId} <br />
-                        <button onClick={this.handleBuy}>Buy</button>
-                    </div>
-                )}
+                <Link to='/home'>Home</Link>
+                <div>
+                    {!this.state.item ? <div classname="loading"><h1>Loading...</h1></div> : (
+                        <div className="listingStyle">
+                            Name: {this.state.item.name} <br />
+                            Description: {this.state.item.description}<br />
+                            Price: {this.state.item.price} <br />
+                            Sold by: {this.state.item.sellerId} <br />
+                            <button onClick={this.handleBuy}>Buy</button>
+                        </div>
+                    )}
+                </div>
             </div>
         )
     }

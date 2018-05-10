@@ -55,21 +55,20 @@ class Account extends Component {
 
         return (
             <div>
-                <Link to='/home'>Back</Link>
+                <div className="banner1">
+                    <Link to='/home'>Home</Link>
+                </div>
                 <div>
                     Items Bought:
-                <div>
                         <ul>
-                            {itemsBought}
-                        </ul>
-                    </div>
-
-                    Items Sold:
+                        {itemsBought}
+                    </ul>
+                </div>
+                Items Sold:
                 <div>
-                        <ul>
-                            {itemsSold}
-                        </ul>
-                    </div>
+                    <ul>
+                        {itemsSold}
+                    </ul>
                 </div>
             </div>
         )

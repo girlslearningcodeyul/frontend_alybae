@@ -27,7 +27,7 @@ class Home extends Component {
     render() {
 
         if (!this.state.loaded) return (
-            <div><h1>Loading ...</h1> </div>);
+            <div className="loading"><h1>Loading ...</h1> </div>);
             
         var mapContents = contents =>
         
@@ -45,18 +45,18 @@ class Home extends Component {
         
 
         return (
-            <div>
+            <div >
                 <div>
-                    <div>
+                    <div className="banner1">
                         <Link to='/account'>go to your account</Link>
-                    </div>
+                   
                     <div>
                         <Link to='/allListings'>go to all listings</Link>
                     </div>
                     <div>
                         <Link to='/create'>create a listing</Link>
                     </div>
-
+                    </div>
                     <div>
                         <ul>
                             {fourListings}

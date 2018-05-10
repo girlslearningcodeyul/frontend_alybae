@@ -31,19 +31,16 @@ class AllListings extends Component {
     }
 
     searchItemsByName = (event) => {
-        let listings = this.state.listings;
         let string = event.target.value;
     //    let filteredListings = listings.filter(listing => listing.name.includes(string))
         this.setState({ kw: string }, () => this.filterListings());
     }
     searchItemsLowPriceRange = (event) => {
-        let listings = this.state.listings;
         let lowPriceInput = event.target.value;
        // let filteredLowPriceListings = listings.filter(listing => lowPriceInput <= listing.price)
         this.setState({lowPriceInput}, () => this.filterListings());
     }
     searchItemsHighPriceRange = (event) => {
-        let listings = this.state.listings;
         let highPriceInput = event.target.value;
     //    let filteredHighPriceListings = listings.filter(listing => highPriceInput >= listing.price)
         this.setState({highPriceInput: highPriceInput === "" ? Infinity:highPriceInput}, () => this.filterListings())
@@ -58,7 +55,7 @@ class AllListings extends Component {
         this.setState({searchResults: filteredListings});
     }
     render() {
-        if (!this.state.loaded) return (<div><h1>Loading ...</h1> </div>);
+        if (!this.state.loaded) return (<div className="loading"><h1>Loading ...</h1> </div>);
 
         var mapContents = contents =>
             <li className="listingStyle">
@@ -75,7 +72,7 @@ class AllListings extends Component {
         return (
             <div>
                 <div>
-                    <Link to='/home'>Back</Link>
+                    <Link to='/home'>Home</Link>
                 </div>
                 <div className="searchBar">
                     <input type="text"
@@ -100,9 +97,6 @@ class AllListings extends Component {
                     <ul>
                         {allListings}
                     </ul>
-                </div>
-                <div>
-                    <Link to='/home'>Back</Link>
                 </div>
             </div>
         )
