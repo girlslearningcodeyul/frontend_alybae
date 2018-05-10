@@ -31,6 +31,7 @@ class Home extends Component {
 
         var mapContents = contents =>
             <li className="listingStyle">
+                <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />

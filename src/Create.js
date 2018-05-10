@@ -10,7 +10,8 @@ class Create extends Component {
             sellerId: "",
             price: 0,
             description: "",
-            name: ""
+            name: "",
+            fileName: ""
         }
     }
 
@@ -31,7 +32,8 @@ class Create extends Component {
             sellerId: this.props.username,//the name of the seller
             price: this.state.price,
             description: this.state.description,
-            name: this.state.name
+            name: this.state.name,
+            imageLocation: this.state.fileName
         })
 
         fetch('/newListing', { method: "POST", body: body })
@@ -45,7 +47,11 @@ class Create extends Component {
     uploadFile = (x) => {
         var filename = x.name;
         var fileExtension = filename.split('.').pop();
-        fetch('/upics?ext=' + fileExtension, { method: "POST", body: x }) // 
+        fetch('/uploadPics?ext=' + fileExtension, { method: "POST", body: x })
+            .then((response) => response.json())
+            .then((responseBody) =>
+                this.setState({ fileName: responseBody }))
+        // 
     }
 
     createListing = () => {
