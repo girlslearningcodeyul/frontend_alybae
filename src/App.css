@@ -215,6 +215,7 @@ position: absolute;
 .searchOutline{
   border-color:#9EEBBF;
   border-style: solid;
+  border-width: thick;
   width:920px;
   height: 100px;
   margin:7px auto;
@@ -304,6 +305,12 @@ transition: 0.5s;
   right: 0;
 }
 
+<<<<<<< HEAD
+=======
+.buyPage {
+  display: inline-block;
+}
+>>>>>>> d61f5947236de5b645ac1031fd275e08fd807829
 /* 
 the following CSS is for the banner
 _____________________________________________________________

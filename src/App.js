@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom'
+import { NotificationContainer } from 'react-notifications';
 import './App.css';
 import Login from './Login.js';
 import Account from './Account.js'
@@ -9,6 +10,7 @@ import AllListings from './AllListings.js';
 import Buy from './Buy.js';
 
 import './App.css'
+import 'react-notifications/lib/notifications.css'; 
 
 class App extends Component {
     constructor() {
@@ -64,6 +66,8 @@ class App extends Component {
                             <Route exact={true} path='/buy/:key' render={this.renderBuy} /> {/* key is a named parameter: https://www.npmjs.com/package/path-to-regexp*/}
                             <Route exact={true} path='/create' render={this.renderCreateListing} />
                             <Route exact={true} path='/allListings' render={this.renderAllListings} />
+                            <NotificationContainer />
+
                         </div>
                     )}
             </BrowserRouter>
