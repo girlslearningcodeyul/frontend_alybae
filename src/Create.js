@@ -27,8 +27,8 @@ class Create extends Component {
 
     handleCreateListing = (e) => {
         e.preventDefault();
-        console.log(this.props)
-        let body = JSON.stringify({
+        console.log(this.state )
+        let body = JSON.stringify({ //sending this to the backend and names have to match
             sellerId: this.props.username,//the name of the seller
             price: this.state.price,
             description: this.state.description,

@@ -179,7 +179,8 @@ position: absolute;
   border-radius: 50%;
 }
 .searchOutline{
-  background-color:#9EEBBF;
+  border-color:#9EEBBF;
+  border-style: solid;
   width:920px;
   height: 100px;
   margin:7px auto;
@@ -260,7 +261,8 @@ img{
   height: 200px;
   border-radius: 40%;
   margin-bottom: 20px;
-  border-style: solid;
-  border-color: white;
+  border-style: dashed;
+  border-color: #F7EEEE;
+  
 }
 

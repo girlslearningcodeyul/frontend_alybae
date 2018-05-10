@@ -25,6 +25,7 @@ class AllListings extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let listings = JSON.parse(responseBody);
+                console.log(listings);
 
                 this.setState({ listings, searchResults: listings, loaded: true });
             })
