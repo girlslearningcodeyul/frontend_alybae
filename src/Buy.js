@@ -32,11 +32,10 @@ class Buy extends Component {
             })
     }
 
-    //process all the parameters of an item, but intead of link do a buttom with an Onclick and handleBuy, which will send the data back to the server and update the items bought and items sold functions
     render() {
 
         return (
-            <div>
+            <div className="banner1">
                 <Link to='/home'>Home</Link>
                 <div>
                     {!this.state.item ? <div classname="loading"><h1>Loading...</h1></div> : (

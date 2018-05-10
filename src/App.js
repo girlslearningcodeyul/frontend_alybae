@@ -18,19 +18,19 @@ class App extends Component {
         }
     }
     renderHome = () => {
-        return <Home />; //do we need props?
+        return <Home />;
     }
-    
+
     renderAccount = () => {
         return <Account username={this.state.username} />
     }
-    
+
     renderBuy = (routeProps) => {
         console.log(routeProps);
         let key = routeProps.match.params.key;
-        return <Buy itemId={key} username={this.state.username} historyPush={routeProps.history.push}/>
+        return <Buy itemId={key} username={this.state.username} historyPush={routeProps.history.push} />
     }
-    
+
     renderAllListings = () => {
         return <AllListings />
     }
@@ -48,13 +48,13 @@ class App extends Component {
         return (
             <div>
                 <Login setUsername={this.setUsername} historyPush={routeProps.history.push} />
-             </div>
+            </div>
         )
     }
 
     render() {
         //console.log(this.state)
-        return (
+        return (<div>
             <BrowserRouter>
                 {(this.state.username === undefined) ?
                     <Route path='/' render={this.renderLogin} /> : (
@@ -67,6 +67,7 @@ class App extends Component {
                         </div>
                     )}
             </BrowserRouter>
+        </div>
         )
     }
 }

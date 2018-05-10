@@ -70,11 +70,15 @@ class Create extends Component {
         )
     }
     render() {
-        return (<div>
-            <Link to='/home'>Home</Link>
-            <div className="createListing">{this.createListing()}
+        return (
+            <div>
+                <div className="banner1">
+                    <Link to='/home'>Home</Link>
+                </div>
+                <div>
+                    <div className="createListing">{this.createListing()}</div>
+                </div>
             </div>
-        </div>
 
         )
     }

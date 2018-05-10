@@ -60,7 +60,7 @@ class Account extends Component {
                 </div>
                 <div>
                     Items Bought:
-                        <ul>
+                    <ul>
                         {itemsBought}
                     </ul>
                 </div>

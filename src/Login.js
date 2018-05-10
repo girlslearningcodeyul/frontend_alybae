@@ -116,7 +116,10 @@ class Login extends Component {
     }
     render() {
         if (this.state.loginFailed) {
-            return (<h1>Login Failed!</h1>)
+            return (<div className="loginFailed">
+            <h1>Login Failed!</h1>
+            <img src='http://www.baronsofbullshit.com/content/images/GabeN.gif' alt=""/>
+            </div>)
         }
         else {
             return (
