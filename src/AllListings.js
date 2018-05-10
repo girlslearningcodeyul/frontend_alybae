@@ -81,7 +81,6 @@ class AllListings extends Component {
                     <Link className="homeLink" to='/home'>Home</Link>
                 </div>
                 <div className="searchOutline">
-                </div>
                 <div className="searchBar">
                     <input type="text"
                         placeholder="search by name!"
@@ -94,13 +93,15 @@ class AllListings extends Component {
                         onChange={this.searchItemsLowPriceRange}>
                     </input>
                 </div>
-                <div className="searchImage"> </div>
                 <div className="searchBarHighRange">
                     <input type="text"
                         placeholder="set highest price"
                         onChange={this.searchItemsHighPriceRange}>
                     </input>
                 </div>
+                <div className="searchImage"> </div>
+                </div>
+                
                 <div className="allListings">
                     <ul>
                         {allListings}
