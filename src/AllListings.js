@@ -12,7 +12,7 @@ class AllListings extends Component {
             searchResults: [],
             kw: "", //what's this variable?
             lowPriceInput: "0",
-            highPriceInput: Infinity,
+            highPriceInput: Infinity
         }
     }
 
@@ -67,7 +67,7 @@ class AllListings extends Component {
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
-                Price: {this.displayFree(contents.price)} <br />
+                $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
                 <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
             </li >
@@ -80,7 +80,6 @@ class AllListings extends Component {
                     <Link to='/home'>Home</Link>
                 </div>
                 <div className="searchOutline">
-<<<<<<< HEAD
                 </div>
                 <div className="searchBar">
                     <input type="text"
@@ -94,22 +93,6 @@ class AllListings extends Component {
                         onChange={this.searchItemsLowPriceRange}>
                     </input>
                 </div>
-=======
-                    <div className="searchBar">
-                        <input type="text"
-                            placeholder="search by name!"
-                            onChange={this.searchItemsByName}>
-                        </input>
-                    </div>
-                    <div className="searchBarLowRange">
-                        <input type="text"
-                            placeholder="Set lowest price"
-                            onChange={this.searchItemsLowPriceRange}>
-                        </input>
-                    </div>
-                </div>
-
->>>>>>> 6656e15fda5dcb5806c4893599610d241b292397
                 <div className="searchImage"> </div>
                 <div className="searchBarHighRange">
                     <input type="text"

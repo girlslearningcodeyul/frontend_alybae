@@ -34,7 +34,7 @@ class Home extends Component {
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
-                Price: {contents.price} <br />
+                $ {contents.price} <br />
                 Sold by: {contents.sellerId} <br />
                 <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
             </li>

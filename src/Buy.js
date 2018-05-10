@@ -57,7 +57,7 @@ class Buy extends Component {
                     <form>
                         <div>
                             shipping information:
-                            </div>
+                        </div>
                         <div>
                             <input placeholder="first name" />
                             <input placeholder="last name" />
@@ -68,10 +68,9 @@ class Buy extends Component {
                             <input placeholder="country" />
                             <input placeholder="e-mail" />
                         </div>
-
                         <div>
                             payment information:
-                            </div>
+                        </div>
                         <div>
                             <input placeholder="card holder" />
                             <input placeholder="cc" />
@@ -88,7 +87,7 @@ class Buy extends Component {
                         <div className="listingStyle"> Order Summary:
                             Name: {this.state.item.name} <br />
                             Description: {this.state.item.description}<br />
-                            Price: {this.state.item.price} <br />
+                            $ {this.state.item.price} <br />
                             Sold by: {this.state.item.sellerId} <br />
                         </div>
                     )}
