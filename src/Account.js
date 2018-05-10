@@ -58,7 +58,7 @@ class Account extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link to='/home'>Home</Link>
+                    <Link className="accountHomeLink" to='/home'>Home</Link>
                 </div>
                 <div>
                     Items Bought:

@@ -238,6 +238,29 @@ position: absolute;
   border-width: 20px;
 }
 
+/*  Styling the Account home link*/
+.accountHomeLink{
+  color:rgb(3, 52, 73);
+  margin-top: 20px;
+  margin-left: -80px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+}
+/*  Styling the creatItem home link*/
+.createItemHomeLink{
+  color:rgb(3, 52, 73);
+  margin-top: 20px;
+  margin-left: -80px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+}
+
 /* 
 the following CSS is for the buy button animation
 _____________________________________________________________
@@ -280,6 +303,7 @@ transition: 0.5s;
   opacity: 1;
   right: 0;
 }
+
 /* 
 the following CSS is for the banner
 _____________________________________________________________

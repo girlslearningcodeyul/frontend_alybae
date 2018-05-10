@@ -89,7 +89,7 @@ class Create extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link to='/home'>Home</Link>
+                    <Link className="createItemHomeLink" to='/home'>Home</Link>
                 </div>
                 <div>
                     <div className="createListing">{this.createListing()}</div>
