@@ -112,13 +112,13 @@ _____________________________________________________________
   padding-left:20px;
   padding-right:20px;
   padding-top: 20px;
-  padding-bottom:250px;
+  padding-bottom:300px;
   width: 250px;
   border-radius: 5px;
   height: 150px;
   margin-top: 100px;
   margin-left: 200px;
-  overflow: visible;
+  overflow: hidden;
   text-shadow:0 1px 1px rgba(0,0,0,.4); 
   border:2px dashed #F7EEEE;
   box-shadow:0 10px 25px 20px #518C96;
@@ -278,6 +278,10 @@ _____________________________________________________________
   padding-bottom: 15px;
   transition: all 0.5s;
   cursor: pointer;
+  position: relative;
+  margin-left: 140px;
+  margin-top: 25px;
+
 }
 
 .buyButton span{
