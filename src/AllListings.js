@@ -78,7 +78,7 @@ class AllListings extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link to='/home'>Home</Link>
+                    <Link className="homeLink" to='/home'>Home</Link>
                 </div>
                 <div className="searchOutline">
                 </div>
