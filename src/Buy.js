@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Email, Item, Span, A } from 'react-html-email' //have to install
 
 import './App.css';
 
@@ -22,18 +21,6 @@ class Buy extends Component {
                 console.log(responseBody);
                 this.setState({ item: JSON.parse(responseBody) })
             })
-    }
-
-    //testing sendind an email
-    handleEmail = () => {
-        <Email title="Hello World!">
-            <Item align="center">
-                <Span fontSize={20}>
-                    This is an example email made with:
-          <A href="https://github.com/chromakode/react-html-email">react-html-email</A>.
-        </Span>
-            </Item>
-        </Email>
     }
 
     handleBuy = (e) => {
