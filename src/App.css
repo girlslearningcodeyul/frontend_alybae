@@ -153,19 +153,19 @@ border-top-color: red;
 border-bottom-color: blueviolet;
 }
 .searchBar{
-  margin-left: 0px;
-  margin-top:30px;
+  margin-left: 260px;
+  margin-top:-77px;
   padding: 0px;
 position: absolute;
 
 }
 .searchBarLowRange{
-  margin-left: 400px;
-  margin-top: 31px;
+  margin-left: 830px;
+  margin-top: -77px;
   position:absolute;
 }
 .searchBarHighRange{
-  margin-left: 920px;
+  margin-left: 1000px;
   margin-top: -77px;
   position: absolute;
 }
