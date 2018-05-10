@@ -93,13 +93,13 @@ class AllListings extends Component {
                         onChange={this.searchItemsLowPriceRange}>
                     </input>
                 </div>
-                <div className="searchImage"> </div>
                 <div className="searchBarHighRange">
                     <input type="text"
                         placeholder="set highest price"
                         onChange={this.searchItemsHighPriceRange}>
                     </input>
                 </div>
+                <div className="searchImage"> </div>
                 </div>
                 
                 <div className="allListings">

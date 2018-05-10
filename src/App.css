@@ -196,7 +196,7 @@ position: absolute;
 .searchBarLowRange{
   margin-left: 430px;
   margin-top: 25px;
-  position:absolute;
+  position: absolute;
 }
 .searchBarHighRange{
   margin-left: 600px;
@@ -207,9 +207,9 @@ position: absolute;
   content:url(images/budy.jpg);
   height: 35px;
   width: 50px;
-  position: absolute;
-  left: 600px;
-  top: 145px;
+  position: relative;
+  left: 270px;
+  top: 25px;
   border-radius: 50%;
 }
 .searchOutline{
