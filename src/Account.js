@@ -37,6 +37,7 @@ class Account extends Component {
     render() {
         var mapItemsBought = contents =>
             <li className="itemsBought">
+                <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
@@ -45,6 +46,7 @@ class Account extends Component {
 
         var mapItemsSold = contents =>
             <li className="itemsSold">
+                <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
                 Description: {contents.description}<br />
                 Price: {contents.price} <br />
