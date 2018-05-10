@@ -181,6 +181,7 @@ position: absolute;
 .searchOutline{
   border-color:#9EEBBF;
   border-style: solid;
+  border-width: thick;
   width:920px;
   height: 100px;
   margin:7px auto;
@@ -232,6 +233,10 @@ transition: 0.5s;
 .buyButton:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.buyPage {
+  display: inline-block;
 }
 /* 
 the following CSS is for the banner
