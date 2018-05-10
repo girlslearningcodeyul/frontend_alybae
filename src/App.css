@@ -187,27 +187,27 @@ border-top-color: red;
 border-bottom-color: blueviolet;
 }
 .searchBar{
-  margin-left: 260px;
-  margin-top:-77px;
-  padding: 0px;
+  margin-left:- 20px;
+  margin-top: 0px;
+  padding: 25px;
 position: absolute;
 
 }
 .searchBarLowRange{
-  margin-left: 830px;
-  margin-top: -77px;
+  margin-left: 430px;
+  margin-top: 25px;
   position:absolute;
 }
 .searchBarHighRange{
-  margin-left: 1000px;
-  margin-top: -77px;
+  margin-left: 600px;
+  margin-top: 25px;
   position: absolute;
 }
 .searchImage{
   content:url(images/budy.jpg);
   height: 35px;
   width: 50px;
-  position: fixed;
+  position: absolute;
   left: 600px;
   top: 145px;
   border-radius: 50%;
