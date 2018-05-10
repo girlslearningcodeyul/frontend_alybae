@@ -78,25 +78,27 @@ class AllListings extends Component {
                 <div className="banner1">
                     <Link to='/home'>Home</Link>
                 </div>
-                <div className="searchBar">
-                    <input type="text"
-                        placeholder="search by name!"
-                        onChange={this.searchItemsByName}>
-                    </input>
-                </div>
-                <div className="searchBarLowRange">
-                    <input type="text"
-                        placeholder="Set lowest price"
-                        onChange={this.searchItemsLowPriceRange}>
-                    </input>
-                </div>
-                <div className="searchImage"> </div>
-                <div className="searchBarHighRange">
-                    <input type="text"
-                        placeholder="set highest price"
-                        onChange={this.searchItemsHighPriceRange}>
-                    </input>
-                </div>
+                    <div className= "searchOutline">
+                    </div>
+                        <div className="searchBar">
+                            <input type="text"
+                                placeholder="search by name!"
+                                onChange={this.searchItemsByName}>
+                            </input>
+                        </div>
+                        <div className="searchBarLowRange">
+                            <input type="text"
+                                placeholder="Set lowest price"
+                                onChange={this.searchItemsLowPriceRange}>
+                            </input>
+                        </div>
+                        <div className="searchImage"> </div>
+                        <div className="searchBarHighRange">
+                            <input type="text"
+                                placeholder="set highest price"
+                                onChange={this.searchItemsHighPriceRange}>
+                            </input>
+                        </div>
                 <div className="allListings">
                     <ul>
                         {allListings}
