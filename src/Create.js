@@ -41,6 +41,13 @@ class Create extends Component {
                 this.props.historyPush('/allListings');
             })
     }
+
+    uploadFile = (x) => {
+        var filename = x.name;
+        var fileExtension = filename.split('.').pop();
+        fetch('/upics?ext=' + fileExtension, { method: "POST", body: x }) // 
+    }
+
     createListing = () => {
         return (
             <div className="listingForm">
@@ -63,6 +70,9 @@ class Create extends Component {
                             onChange={this.handlePrice}
                             value={this.price}>
                         </input>
+                        <div></div>
+                        Upload an image:
+                        <input type="file" id="input" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
                     <input type="submit" ></input>
                 </form>
