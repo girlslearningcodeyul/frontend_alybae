@@ -228,7 +228,7 @@ position: absolute;
 /* this is for the home button in allListing*/
 
 .homeLink {
-  color: #247BA0;
+  color:rgb(3, 52, 73);
   margin-top: 20px;
   margin-left: -80px;
   position: absolute;
@@ -236,8 +236,6 @@ position: absolute;
   border-style: double;
   border-radius: 25%;
   border-width: 20px;
-
-
 }
 
 /* 

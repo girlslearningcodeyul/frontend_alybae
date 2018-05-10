@@ -64,7 +64,7 @@ class Buy extends Component {
                             <input placeholder="month" />
                             <input placeholder="year" />
                             <input placeholder="CVV" />
-                            <input onClick={this.handleEmail} type="submit" ></input>
+                            <input onClick={this.handleEmail} type="submit" value="Confirm Order" ></input>
                         </div>
 
                     </form>
