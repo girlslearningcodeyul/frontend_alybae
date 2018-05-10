@@ -46,12 +46,12 @@ class Home extends Component {
             <div >
                 <div>
                     <div className="banner1">
-                        <Link to='/account'>Your account</Link>
+                        <Link className="homeAccountLink" to='/account'>Your account</Link>
                         <div>
-                            <Link to='/allListings'>All listings</Link>
+                            <Link className="homeAllListingsLink" to='/allListings'>View all listings</Link>
                         </div>
                         <div>
-                            <Link to='/create'>Create a listing</Link>
+                            <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
                         </div>
                     </div>
                     <div>

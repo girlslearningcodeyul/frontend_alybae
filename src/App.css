@@ -135,6 +135,40 @@ ul{
   list-style-type: none;
 }
 
+/* Spiffin' out the links in the home page 
+-----------------------------------------------------------------------
+*/
+.homeAccountLink{
+  color: rgb(3, 52, 73);
+  margin-top: 20px;
+  margin-left: -100px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+}
+.homeAllListingsLink{
+  color: rgb(4, 44, 61);
+  margin-top: 20px;
+  margin-left: 270px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+}
+.homeCreateListingsLink{
+color: rgb(5, 53, 73);
+  margin-top: 20px;
+  margin-left: 660px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+}
+
 /* these be for the search functionality of the allListings page 
 
 -----------------------------------------------------------------------
@@ -190,6 +224,19 @@ position: absolute;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   padding-left:190px;
+}
+
+/* this is for the home button in allListing*/
+
+.homeLink {
+  color:rgb(3, 52, 73);
+  margin-top: 20px;
+  margin-left: -80px;
+  position: absolute;
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
 }
 
 /* 

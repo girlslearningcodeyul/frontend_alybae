@@ -50,6 +50,7 @@ class Buy extends Component {
                     <div>
                         shipping information:
                         </div>
+<<<<<<< HEAD
                     <div>
                         <div><input placeholder="first name" /><input placeholder="last name" /></div>
                         <div><input placeholder="address" /><input placeholder="city" /></div>
@@ -58,6 +59,18 @@ class Buy extends Component {
                     </div>
                     <div>
                         payment information:
+=======
+                        <div>
+                            payment information:
+                        </div>
+                        <div>
+                            <input placeholder="card holder" />
+                            <input placeholder="cc" />
+                            <input placeholder="month" />
+                            <input placeholder="year" />
+                            <input placeholder="CVV" />
+                            <input onClick={this.handleEmail} type="submit" value="Confirm Order" ></input>
+>>>>>>> 84d8a65a91f7f20e084be2daf5761d59c09fbc39
                         </div>
                     <div>
                         <input placeholder="card holder" />
