@@ -153,38 +153,41 @@ border-top-color: red;
 border-bottom-color: blueviolet;
 }
 .searchBar{
-  margin-left: 290px;
+  margin-left: 0px;
   margin-top:30px;
   padding: 0px;
-position: relative;
+position: absolute;
 
 }
 .searchBarLowRange{
-  margin-left: 700px;
-  margin-top: -35px;
-  position:relative;
+  margin-left: 400px;
+  margin-top: 31px;
+  position:absolute;
 }
 .searchBarHighRange{
-  margin-left: 875px;
-  margin-top: -37px;
-  position: relative;
+  margin-left: 920px;
+  margin-top: -77px;
+  position: absolute;
 }
 .searchImage{
   content:url(images/budy.jpg);
   height: 35px;
   width: 50px;
   position: fixed;
-  left: 475px;
-  top: 137px;
+  left: 600px;
+  top: 145px;
   border-radius: 50%;
 }
 .searchOutline{
-  width: 1200px;
+  background-color:#9EEBBF;
+  width:920px;
   height: 100px;
-  margin-left: 100px;
-  border: dotted rgb(110, 20, 184) 2px;
-  position: absolute;
-border-radius: 35%
+  margin:7px auto;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding-left:190px;
 }
 
 /* 
