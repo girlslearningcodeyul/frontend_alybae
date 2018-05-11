@@ -173,11 +173,11 @@ color: rgb(5, 53, 73);
 
 -----------------------------------------------------------------------
 */
-input::placeholder {
+/* input::placeholder {
   color: lightskyblue;
   font-size: 1.2em;
   font-style: italic;
-}
+} */
 input[type=text]{
 padding: 10px;
 -webkit-border-radius: 50px;
@@ -278,9 +278,9 @@ _____________________________________________________________
   padding-bottom: 15px;
   transition: all 0.5s;
   cursor: pointer;
-  position: relative;
-  margin-left: 140px;
-  margin-top: 25px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
 
 }
 
@@ -343,5 +343,56 @@ img{
   border-style: dashed;
   border-color: #F7EEEE;
   
+}
+
+/* 
+the following CSS is for the cart - buy page
+_____________________________________________________________
+*/
+.buyPage{
+  display:flex;
+  position:absolute;
+  text-align: center;
+  padding-left: 150px;
+  margin-bottom: 30px;
+}
+.orderSummary{
+padding: 50px;
+margin-right:30px;
+}
+
+.orderText{
+  background-color: transparent;
+  text-transform: uppercase;
+  margin-top: 40px; /*specifies the offset or the ORDER SUMMARY text from the top*/
+  margin-left:60px;
+}
+
+.paymentForm{
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
+  border-radius: 10%; 
+  border: 2px solid #fff;
+  color: #000; 
+  height: 600px;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.btn-success{
+   text-transform: uppercase;
+   padding: 10px 60px;
+   color: white;
+   background: #444;
+   font-weight: normal;
+}
+
+.buyInputs{
+  margin: 20px;
+}
+
+.justInputs{
+  margin:20px;
+  border-radius: 5%
 }
 

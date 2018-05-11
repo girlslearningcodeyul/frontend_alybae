@@ -67,7 +67,6 @@ class App extends Component {
                             <Route exact={true} path='/create' render={this.renderCreateListing} />
                             <Route exact={true} path='/allListings' render={this.renderAllListings} />
                             <NotificationContainer />
-
                         </div>
                     )}
             </BrowserRouter>
