@@ -75,8 +75,6 @@ class Login extends Component {
             })
     }
 
-
-
     renderLoginForm = () => {
         return (<div className="loginDiv"> Login:
           <form onSubmit={this.handleLoginSubmit}>
@@ -90,8 +88,9 @@ class Login extends Component {
                         onChange={this.handlePasswordChange}
                         value={this.inputPasswordValue}>
                     </input>
+                    <input className="loginSubmitButton" type="submit" ></input>
                 </div>
-                <input className="loginSubmitButton" type="submit" ></input>
+                
             </form>
         </div>)
     }
@@ -117,25 +116,20 @@ class Login extends Component {
     render() {
         if (this.state.loginFailed) {
             return (<div className="loginFailed">
-            <h1>Login Failed!</h1>
-            <img src='http://www.baronsofbullshit.com/content/images/GabeN.gif' alt=""/>
+                <h1>Login Failed!</h1>
+                <img src='http://www.baronsofbullshit.com/content/images/GabeN.gif' alt="" />
             </div>)
         }
         else {
             return (
-
-                <div className="banner">
-                    <div className="wall"> </div>
-                    <div><h1 className="title">AlyBae</h1>
-                        <div>
-                            <div className="login">
-                                {this.renderLoginForm()}</div>
-                            <div className="signUp">
-                                {this.renderCreateAccountForm()}</div>
-                        </div>
-                    </div>
+                <div className="loginPageBanner">
+                 
+                        <div className="login">
+                            {this.renderLoginForm()}</div>
+                        <div className="signUp">
+                            {this.renderCreateAccountForm()}</div>
+                    
                 </div>
-
             );
         }
     }

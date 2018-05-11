@@ -60,6 +60,14 @@ class AllListings extends Component {
         if (price === 0) return 'free';
         else return price;
     }
+
+    displayCut = (description) => {
+        if (description.length > 20) {
+            let substr = description.substr(0,30);
+            return substr + "...";
+        }
+        else return description;
+    }
     render() {
         if (!this.state.loaded) return (<div className="loading"><h1>Loading ...</h1> </div>);
 
@@ -67,10 +75,10 @@ class AllListings extends Component {
             <li className="listingStyle">
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
-                Description: {contents.description}<br />
+                Description: {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
+                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>buy</span></Link>
             </li >
 
         let allListings = this.state.searchResults.map(mapContents)
@@ -80,8 +88,14 @@ class AllListings extends Component {
                 <div>
                     <div className="banner1">
                         <Link className="homeLink" to='/home'>Aly-bae</Link>
+<<<<<<< HEAD
                         <Link className="homeAccountLink" to='/account'>Your account</Link>
                         <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+=======
+                        <div><Link className="homeAccountLink" to='/account'>Your account</Link></div>
+                        <div><Link className="homeCreateListingsLink" to='/create'>Create a listing</Link></div>
+                        <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
+>>>>>>> de52b13a2343d8c9e1ad0b2cf2d02bcf0da2fe86
                     </div>
                     <div className="searchOutline">
                         <div className="searchBar">
