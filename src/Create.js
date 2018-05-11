@@ -90,12 +90,8 @@ class Create extends Component {
             <div>
                 <div className="banner1">
                     <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
-                    <div>
-                        <Link className="homeAccountLink" to='/account'>Your account</Link>
-                    </div>
-                    <div>
-                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
-                    </div>
+                    <Link className="homeAccountLink" to='/account'>Your account</Link>
+                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>  
                 </div>
                 <div>
                     <div className="createListing">{this.createListing()}</div>

@@ -44,19 +44,18 @@ class Home extends Component {
 
         return (
             <div >
-                <div>
                     <div className="banner1">
                         <Link className="homeAccountLink" to='/account'>Your account</Link>
-                        <div><Link className="homeAllListingsLink" to='/allListings'>All listings</Link></div>
-                        <div><Link className="homeCreateListingsLink" to='/create'>Create a listing</Link></div>
-                    </div>
+                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
+                        <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+                    </div>           
                     <div>
                         <ul>
                             {fourListings}
                         </ul>
                     </div>
                 </div>
-            </div>)
+            )
     }
 }
 
