@@ -76,36 +76,39 @@ class AllListings extends Component {
         let allListings = this.state.searchResults.map(mapContents)
 
         return (
-            <div>
-                <div className="banner1">
-                    <Link className="homeLink" to='/home'>Home</Link>
-                </div>
-                <div className="searchOutline">
-                <div className="searchBar">
-                    <input type="text"
-                        placeholder="search by name!"
-                        onChange={this.searchItemsByName}>
-                    </input>
-                </div>
-                <div className="searchBarLowRange">
-                    <input type="text"
-                        placeholder="Set lowest price"
-                        onChange={this.searchItemsLowPriceRange}>
-                    </input>
-                </div>
-                <div className="searchBarHighRange">
-                    <input type="text"
-                        placeholder="set highest price"
-                        onChange={this.searchItemsHighPriceRange}>
-                    </input>
-                </div>
-                <div className="searchImage"> </div>
-                </div>
-                
-                <div className="allListings">
-                    <ul>
-                        {allListings}
-                    </ul>
+            <div>\
+                <div>
+                    <div className="banner1">
+                        <Link className="homeLink" to='/home'>Aly-bae</Link>
+                        <div><Link className="homeAccountLink" to='/account'>Your account</Link></div>
+                        <div><Link className="homeCreateListingsLink" to='/create'>Create a listing</Link></div>
+                    </div>
+                    <div className="searchOutline"></div>
+
+                    <div className="searchBar">
+                        <input type="text"
+                            placeholder="search by name!"
+                            onChange={this.searchItemsByName}>
+                        </input>
+                    </div>
+                    <div className="searchBarLowRange">
+                        <input type="text"
+                            placeholder="Set lowest price"
+                            onChange={this.searchItemsLowPriceRange}>
+                        </input>
+                    </div>
+                    <div className="searchImage"> </div>
+                    <div className="searchBarHighRange">
+                        <input type="text"
+                            placeholder="set highest price"
+                            onChange={this.searchItemsHighPriceRange}>
+                        </input>
+                    </div>
+                    <div className="allListings">
+                        <ul>
+                            {allListings}
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

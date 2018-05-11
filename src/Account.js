@@ -58,7 +58,13 @@ class Account extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link className="accountHomeLink" to='/home'>Home</Link>
+                    <Link className="accountHomeLink" to='/home'>Aly-bae</Link>
+                    <div>
+                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
+                    </div>
+                    <div>
+                        <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+                    </div>
                 </div>
                 <div>
                     Items Bought:

@@ -27,7 +27,7 @@ class Create extends Component {
 
     handleCreateListing = (e) => {
         e.preventDefault();
-        console.log(this.state )
+        console.log(this.state)
         let body = JSON.stringify({ //sending this to the backend and names have to match
             sellerId: this.props.username,//the name of the seller
             price: this.state.price,
@@ -89,7 +89,13 @@ class Create extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link className="createItemHomeLink" to='/home'>Home</Link>
+                    <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
+                    <div>
+                        <Link className="homeAccountLink" to='/account'>Your account</Link>
+                    </div>
+                    <div>
+                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
+                    </div>
                 </div>
                 <div>
                     <div className="createListing">{this.createListing()}</div>
