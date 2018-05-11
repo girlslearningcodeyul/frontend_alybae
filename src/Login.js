@@ -122,7 +122,7 @@ class Login extends Component {
     };
 
     createNotificationCreate = () => {
-        return NotificationManager.success('Welcome, ' + this.state.inputUsernameCreate );
+        return NotificationManager.success('Welcome to Aly-bae, the most exclusive of online stores, ' + this.state.inputUsernameCreate);
     };
 
     render() {

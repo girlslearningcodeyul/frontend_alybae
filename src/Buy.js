@@ -27,18 +27,14 @@ class Buy extends Component {
 
     handleBuy = (e) => {
         e.preventDefault();
+        if (!this.handleValidation()) return this.createNotificationError();
         fetch('/buyItem?itemId=' + this.props.itemId + '&userId=' + this.props.username)
             .then(response => response.text())
             .then(responseBody => {
                 //console.log("successfully sent")
-                if (this.handleValidation()) {
-                    this.props.historyPush('/account');
+                   this.props.historyPush('/account');
                     this.createNotification();
-                }
-                else {
-                    this.createNotificationError();
-                }
-            })
+                })
     }
 
     createNotification = () => {
@@ -67,7 +63,6 @@ class Buy extends Component {
                 errors["name"] = "Only letters";
             }
         }
-
         //Email
         if (!fields["email"]) {
             formIsValid = false;
@@ -89,8 +84,14 @@ class Buy extends Component {
 
     render() {
         let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
+        let checkErrorClass =  this.state.errors["name"] ? "inputError" : "";
+
+
+
+
         let checkErrorTextLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
-        let checkErrorStyle = checkErrorTextLastName ? { color: "red" } : null;
+
+
 
         return (
             <div>
@@ -118,7 +119,7 @@ class Buy extends Component {
                     </div>
                         <div className="buyInputs">
                             <div>
-                                <input className="justInputs" placeholder={checkErrorText} />
+                                <input className={"justInputs " + checkErrorClass} placeholder={checkErrorText} />
                                 <input className="justInputs" placeholder={checkErrorTextLastName} />
                             </div>
                             <div><input className="justInputs" placeholder="address" /><input className="justInputs" placeholder="city" /></div>
