@@ -10,7 +10,9 @@ class Buy extends Component {
         super();
         this.state = {
             item: null,
-            sellerId: ""
+            sellerId: "",
+            fields: {},
+            errors: {}
         }
     }
     componentDidMount() {
@@ -29,17 +31,66 @@ class Buy extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 //console.log("successfully sent")
-                this.props.historyPush('/account');
-                this.createNotification();
+                if (this.handleValidation()) {
+                    this.props.historyPush('/account');
+                    this.createNotification();
+                }
+                else {
+                    this.createNotificationError();
+                }
             })
     }
 
     createNotification = () => {
-        return NotificationManager.success('Success! You bought this thing!', 'Title here');
+        return NotificationManager.success('Success! You bought this thing!');
     };
 
+    createNotificationError = () => {
+        return NotificationManager.error('Some form parameters are missing'); //make this red
+    }
+
+    //the form validates that all the parameters exist
+    handleValidation() {
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        //Name
+        if (!fields["name"]) {
+            formIsValid = false;
+            errors["name"] = "Cannot be empty";
+        }
+
+        if (typeof fields["name"] !== "undefined") {
+            if (!fields["name"].match(/^[a-zA-Z]+$/)) {
+                formIsValid = false;
+                errors["name"] = "Only letters";
+            }
+        }
+
+        //Email
+        if (!fields["email"]) {
+            formIsValid = false;
+            errors["email"] = "cannot be empty";
+        }
+
+        if (typeof fields["email"] !== "undefined") {
+            let lastAtPos = fields["email"].lastIndexOf('@');
+            let lastDotPos = fields["email"].lastIndexOf('.');
+
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+                formIsValid = false;
+                errors["email"] = "Email is not valid";
+            }
+        }
+        this.setState({ errors: errors });
+        return formIsValid;
+    }
 
     render() {
+        let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
+        let checkErrorTextLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
+        let checkErrorStyle = checkErrorTextLastName ? { color: "red" } : null;
 
         return (
             <div>
@@ -65,19 +116,22 @@ class Buy extends Component {
                         <div>
                             shipping information:
                     </div>
-                        <div className = "buyInputs">
-                            <div><input className="justInputs" placeholder="first name" /><input className="justInputs" placeholder="last name" /></div>
+                        <div className="buyInputs">
+                            <div>
+                                <input className="justInputs" placeholder={checkErrorText} />
+                                <input className="justInputs" placeholder={checkErrorTextLastName} />
+                            </div>
                             <div><input className="justInputs" placeholder="address" /><input className="justInputs" placeholder="city" /></div>
                             <div><input className="justInputs" placeholder="state/province" /><input className="justInputs" placeholder="zip/postal code" /></div>
-                            <div><input className="justInputs" placeholder="country" /><input className="justInputs" placeholder="e-mail" /></div>
+                            <div><input className="justInputs" placeholder="country" /><input className="justInputs" placeholder="e-mail" value={this.state.fields["email"]} /></div>
                         </div>
                         <div>
                             payment information:
                     </div>
-                        <div className = "buyInputs">
+                        <div className="buyInputs">
                             <input className="justInputs" placeholder="card holder" /> <input className="justInputs" placeholder="credit card number" />
                         </div>
-                        <div className = "buyInputs">
+                        <div className="buyInputs">
                             <select>
                                 <option value="01">January</option>
                                 <option value="02">February </option>

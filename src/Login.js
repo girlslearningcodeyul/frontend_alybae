@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NotificationManager } from 'react-notifications';
 import './App.css';
 
 
@@ -48,6 +49,7 @@ class Login extends Component {
                     this.setState({ sessionID: sessionID })
                     this.props.setUsername(this.state.inputUsernameValue); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
                     this.props.historyPush('/home');
+                    this.createNotificationLogin();
                 }
                 else {
                     this.setState({ loginFailed: "true" })
@@ -71,6 +73,7 @@ class Login extends Component {
                     let username = parsed.username
                     this.props.setUsername(username); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
                     this.props.historyPush('/home');
+                    this.createNotificationCreate();
                 }
             })
     }
@@ -113,6 +116,15 @@ class Login extends Component {
             </form>
         </div>)
     }
+
+    createNotificationLogin = () => {
+        return NotificationManager.success('Welcome back, ' + this.state.inputUsernameValue );
+    };
+
+    createNotificationCreate = () => {
+        return NotificationManager.success('Welcome, ' + this.state.inputUsernameCreate );
+    };
+
     render() {
         if (this.state.loginFailed) {
             return (<div className="loginFailed">
