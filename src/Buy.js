@@ -87,8 +87,6 @@ class Buy extends Component {
         let checkErrorClass =  this.state.errors["name"] ? "inputError" : "";
 
 
-
-
         let checkErrorTextLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
 
 
