@@ -66,6 +66,7 @@ class AllListings extends Component {
             let substr = description.substr(0,30);
             return substr + "...";
         }
+        else return description;
     }
     render() {
         if (!this.state.loaded) return (<div className="loading"><h1>Loading ...</h1> </div>);
@@ -77,7 +78,7 @@ class AllListings extends Component {
                 Description: {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>see more</span></Link>
+                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>buy</span></Link>
             </li >
 
         let allListings = this.state.searchResults.map(mapContents)
@@ -89,6 +90,7 @@ class AllListings extends Component {
                         <Link className="homeLink" to='/home'>Aly-bae</Link>
                         <div><Link className="homeAccountLink" to='/account'>Your account</Link></div>
                         <div><Link className="homeCreateListingsLink" to='/create'>Create a listing</Link></div>
+                        <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
                     </div>
                     <div className="searchOutline"></div>
 

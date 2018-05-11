@@ -48,7 +48,7 @@ _____________________________________________________________
   padding: 20px;
 }
 
-.loginSubmitButton, .createSubmitButton{
+.loginSubmitButton, .createSubmitButton, .submitButton{
   background:#a5ecc3;
   border:0;
   color:#fff;
@@ -230,14 +230,14 @@ padding-left:190px;
   font-style: italic;
 } */
 
-input[type=text]{
+/* input[type=text]{
 padding: 10px;
 -webkit-border-radius: 50px;
 -moz-border-radius: 50px;
 border-radius: 50px;
 border-top-color: red;
 border-bottom-color: blueviolet;
-}
+} */
 
 /*  Styling the Account home link*/
 .accountHomeLink{
@@ -373,6 +373,7 @@ margin-right:30px;
    color: white;
    background: #444;
    font-weight: normal;
+   cursor: pointer; 
 }
 
 .buyInputs{
@@ -384,3 +385,27 @@ margin-right:30px;
   border-radius: 5%
 }
 
+/* 
+the following CSS is for the create listing form
+_____________________________________________________________
+*/
+.listingForm{
+  background-color: transparent; /* Remove background fill */
+  text-transform: uppercase; /* Make text all uppercase */
+  border-radius: 10%; 
+  border: 2px solid #fff;
+  color: #000; 
+  height: 300px;
+  width: 400px;
+  padding: 50px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.listingForm input[type="button"]:hover, 
+.listingForm input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #f4511e 5%, #f4511e 100%);
+    background-color: #f4511e;
+}

@@ -10,7 +10,7 @@ import AllListings from './AllListings.js';
 import Buy from './Buy.js';
 
 import './App.css'
-import 'react-notifications/lib/notifications.css'; 
+import 'react-notifications/lib/notifications.css';
 
 class App extends Component {
     constructor() {

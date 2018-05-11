@@ -56,31 +56,31 @@ class Create extends Component {
 
     createListing = () => {
         return (
-            <div className="listingForm">
-                <form onSubmit={this.handleCreateListing}>Create a Listing:
+            <div className="listingForm">Create a Listing:
+                <form onSubmit={this.handleCreateListing}>
                 <div>
                         Item Name:
-                        <input type="text"
+                        <input type="text" className="justInputs" placeholder="name your item"
                             onChange={this.handleName}
                             value={this.name}>
                         </input>
                         <div></div>
                         Description:
-                        <input type="text"
+                        <input type="text" className="justInputs" placeholder="describe it"
                             onChange={this.handleDesc}
                             value={this.description}>
                         </input>
                         <div></div>
                         Enter Price:
-                        <input type="text"
+                        <input type="text" className="justInputs" placeholder="how much or free?"
                             onChange={this.handlePrice}
                             value={this.price}>
                         </input>
-                        <div></div>
-                        Upload an image:
+                        <div>Upload an image:</div>
+                        
                         <input type="file" id="input" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
-                    <input type="submit" ></input>
+                    <input className="submitButton" type="submit" ></input>
                 </form>
             </div>
         )
@@ -90,12 +90,9 @@ class Create extends Component {
             <div>
                 <div className="banner1">
                     <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
-                    <div>
-                        <Link className="homeAccountLink" to='/account'>Your account</Link>
-                    </div>
-                    <div>
-                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
-                    </div>
+                    <div><Link className="homeAccountLink" to='/account'>Your account</Link></div>
+                    <div><Link className="homeAllListingsLink" to='/allListings'>All listings</Link></div>
+                    <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
                 </div>
                 <div>
                     <div className="createListing">{this.createListing()}</div>
