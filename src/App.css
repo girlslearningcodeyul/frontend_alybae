@@ -193,6 +193,17 @@ ul{
     border-radius: 25%;
     border-width: 20px;
   }
+.homeLogoutLink {
+  grid-column: 21/24;
+  grid-row: 2/3;;
+  color: rgb(5, 53, 73);
+    border-color:#FCBCB8;
+    border-style: double;
+    border-radius: 25%;
+    border-width: 20px;
+  }
+
+
   /* Now for the search outline and child elements */
   .searchOutline{
     border-color:#9EEBBF;

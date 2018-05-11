@@ -33,14 +33,26 @@ class Account extends Component {
 
             })
     }
-
+    //the following function is to display free if the price of the item is set to zero
+    displayFree = (price) => {
+        if (price === 0) return 'free';
+        else return price;
+    }
+    //the following function is to display the first 20 characters of an item's desciption
+    displayCut = (description) => {
+        if (description.length > 20) {
+            let substr = description.substr(0, 30);
+            return substr + "...";
+        }
+        else return description;
+    }
     render() {
         var mapItemsBought = contents =>
             <li className="itemsBought">
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
-                Description: {contents.description}<br />
-                Price: {contents.price} <br />
+                Description: {this.displayCut(contents.description)}<br />
+                $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
             </li>
 
@@ -48,8 +60,8 @@ class Account extends Component {
             <li className="itemsSold">
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
-                Description: {contents.description}<br />
-                Price: {contents.price} <br />
+                Description: {this.displayCut(contents.description)}<br />
+                $ {this.displayFree(contents.price)} <br />
             </li>
 
         let itemsBought = this.state.itemsBought.map(mapItemsBought);
@@ -61,9 +73,8 @@ class Account extends Component {
                     <Link className="accountHomeLink" to='/home'>Aly-bae</Link>
                     <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
                     <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
                 </div>
-                <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
-                
                 <div>
                     Items Bought:
                     <ul>

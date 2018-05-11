@@ -58,7 +58,7 @@ class Create extends Component {
         return (
             <div className="listingForm">Create a Listing:
                 <form onSubmit={this.handleCreateListing}>
-                <div>
+                    <div>
                         Item Name:
                         <input type="text" className="justInputs" placeholder="name your item"
                             onChange={this.handleName}
@@ -77,7 +77,7 @@ class Create extends Component {
                             value={this.price}>
                         </input>
                         <div>Upload an image:</div>
-                        
+
                         <input type="file" id="input" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
                     <input className="submitButton" type="submit" ></input>
@@ -91,10 +91,9 @@ class Create extends Component {
                 <div className="banner1">
                     <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
                     <Link className="homeAccountLink" to='/account'>Your account</Link>
-                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>  
+                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
+                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
                 </div>
-                <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
-                
                 <div>
                     <div className="createListing">{this.createListing()}</div>
                 </div>

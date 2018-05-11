@@ -60,8 +60,9 @@ class Home extends Component {
                         <Link className="homeAccountLink" to='/account'>Your account</Link>
                         <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
                         <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+                        <div className ="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
                     </div>         
-                    <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                    
                       
                     <div>
                         <ul>
