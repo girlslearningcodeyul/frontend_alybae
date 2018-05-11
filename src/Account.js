@@ -59,10 +59,11 @@ class Account extends Component {
             <div>
                 <div className="banner1">
                     <Link className="accountHomeLink" to='/home'>Aly-bae</Link>
-                    <div><Link className="homeAllListingsLink" to='/allListings'>All listings</Link></div>
-                    <div><Link className="homeCreateListingsLink" to='/create'>Create a listing</Link></div>
-                    <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
+                    <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
                 </div>
+                <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                
                 <div>
                     Items Bought:
                     <ul>
