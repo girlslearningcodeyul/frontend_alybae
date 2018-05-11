@@ -23,7 +23,17 @@ class Home extends Component {
                 this.setState({ fourRandomListings, loaded: true });
             })
     }
+    displayFree = (price) => {
+        if (price === 0) return 'free';
+        else return price;
+    }
 
+    displayCut = (description) => {
+        if (description.length > 20) {
+            let substr = description.substr(0,30);
+            return substr + "...";
+        }
+    }
     render() {
 
         if (!this.state.loaded) return (
@@ -33,10 +43,10 @@ class Home extends Component {
             <li className="listingStyle">
                 <img src={contents.imageLocation} alt="" />
                 Name: {contents.name} <br />
-                Description: {contents.description}<br />
-                $ {contents.price} <br />
+                Description: {this.displayCut(contents.description)}<br />
+                $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
-                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>Buy</span></Link>
+                <Link className="buyButton" to={"/buy/" + contents.itemId}><span>see more</span></Link>
             </li>
 
         let fourListings = this.state.fourRandomListings.map(mapContents);
