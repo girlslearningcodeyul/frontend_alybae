@@ -12,7 +12,7 @@ _____________________________________________________________
 
 .loginPageBanner{
   background-image: url(images/logo.png);
-height: 2000px;
+  height: 900px;
 
 
 }
@@ -54,11 +54,13 @@ height: 2000px;
   color:#fff;
   padding:10px;
   font-size:20px;
-  width:330px;
+  width:300px;
   margin:20px auto;
   display:block;
   cursor:pointer;
   font-family: Helvetica, sans-serif;
+  position: relative;
+
 }
 
 .input{
