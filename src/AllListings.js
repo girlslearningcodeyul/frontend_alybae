@@ -60,7 +60,7 @@ class AllListings extends Component {
         if (price === 0) return 'free';
         else return price;
     }
-    //the following function is to display the first 20 characters of an item's desciption
+
     displayCut = (description) => {
         if (description.length > 20) {
             let substr = description.substr(0,30);
@@ -90,10 +90,8 @@ class AllListings extends Component {
                         <Link className="homeLink" to='/home'>Aly-bae</Link>
                         <Link className="homeAccountLink" to='/account'>Your account</Link>
                         <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
-                        <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
                     </div>
-                    
-                    
+                    <div className="logout"><a href="" onClick="window.location.reload(true);">Logout</a></div>                    
                     <div className="searchOutline">
                         <div className="searchBar">
                             <input type="text"

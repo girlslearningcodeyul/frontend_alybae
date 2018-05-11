@@ -95,7 +95,7 @@ class Buy extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link to='/home'>Aly-bae</Link>
+                    <Link className="homeLink" to='/home'>Aly-bae</Link>
                 </div>
                 <div className="buyPage">
                     <div className="orderSummary"> {/*the order summary div*/}

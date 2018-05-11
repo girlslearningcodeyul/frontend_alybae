@@ -56,6 +56,7 @@ class Home extends Component {
 
         return (
             <div >
+                    <img src="images/logo.png" alt="logo"></img>                                        
                     <div className="banner1">
                         <Link className="homeAccountLink" to='/account'>Your account</Link>
                         <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
