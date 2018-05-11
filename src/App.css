@@ -87,6 +87,8 @@ _____________________________________________________________
 span{
   font-size: 15px;
 }
+/* .logout{
+} */
 
 /* 
 the following CSS is or the items for sale
@@ -135,9 +137,8 @@ ul{
 }
 .homeAllListingsLink{
   color: rgb(4, 44, 61);
-  margin-top: 20px;
-  margin-left: 270px;
-  position: absolute;
+  grid-column: 8/11;
+  grid-row: 2/3;
   border-color:#FCBCB8;
   border-style: double;
   border-radius: 25%;

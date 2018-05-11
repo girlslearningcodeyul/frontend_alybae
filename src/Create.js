@@ -92,8 +92,9 @@ class Create extends Component {
                     <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
                     <Link className="homeAccountLink" to='/account'>Your account</Link>
                     <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>  
-                    <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
                 </div>
+                <div><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                
                 <div>
                     <div className="createListing">{this.createListing()}</div>
                 </div>
