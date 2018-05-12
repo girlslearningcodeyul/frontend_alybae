@@ -1,6 +1,7 @@
 body{
-  font-family: Helvetica, sans-serif;
+  font-family: 'Flamenco';
   letter-spacing: 1.5px;
+  font-size: 20px;
   background-image: url(images/pattern.png);
 
 }
@@ -13,9 +14,8 @@ _____________________________________________________________
 .loginPageBanner{
   background-image: url(images/logo.png);
   height: 900px;
-
-
 }
+
 .login{
   color:white;
   text-align: center;
@@ -385,9 +385,6 @@ margin-right:30px;
 .justInputs{
   margin:20px;
   border-radius: 5%
-}
-.inputError::placeholder {
-  color:red;
 }
 
 /* 

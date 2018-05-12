@@ -74,8 +74,8 @@ class AllListings extends Component {
         var mapContents = contents =>
             <li className="listingStyle">
                 <img src={contents.imageLocation} alt="" />
-                Name: {contents.name} <br />
-                Description: {this.displayCut(contents.description)}<br />
+                {contents.name} <br/><br/>
+                {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
                 <Link className="buyButton" to={"/buy/" + contents.itemId}><span>buy</span></Link>

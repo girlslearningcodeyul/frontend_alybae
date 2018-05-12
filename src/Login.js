@@ -11,7 +11,8 @@ class Login extends Component {
             inputUsernameValue: "",
             inputPasswordValue: "",
             inputUsernameCreate: "",
-            inputPasswordCreate: ""
+            inputPasswordCreate: "",
+            sessionID: ""
         }
     }
 
@@ -40,14 +41,14 @@ class Login extends Component {
             password: this.state.inputPasswordValue
         })
 
-        fetch('/login', { method: "POST", body: body })
+        fetch('/login', { method: "POST", credentials: "same-origin", body: body }) //same origin is for the cookies to be stored on the client side
             .then(response => response.text())
             .then(responseBody => {
                 let parsed = JSON.parse(responseBody)
                 let sessionID = parsed.sessionID
                 if (sessionID) {
-                    this.setState({ sessionID: sessionID })
-                    this.props.setUsername(this.state.inputUsernameValue); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
+                    //this.setState({ sessionID: sessionID }) do not need to sent this anymore if using cookies
+                    this.props.setUsername(this.state.inputUsernameValue, this.state.sessionID); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
                     this.props.historyPush('/home');
                     this.createNotificationLogin();
                 }

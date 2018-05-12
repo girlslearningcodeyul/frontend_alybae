@@ -54,13 +54,13 @@ class Buy extends Component {
         //Name
         if (!fields["name"]) {
             formIsValid = false;
-            errors["name"] = "Cannot be empty";
+            errors["name"] = "cannot be empty";
         }
 
         if (typeof fields["name"] !== "undefined") {
             if (!fields["name"].match(/^[a-zA-Z]+$/)) {
                 formIsValid = false;
-                errors["name"] = "Only letters";
+                errors["name"] = "only letters";
             }
         }
         //Email
@@ -75,7 +75,7 @@ class Buy extends Component {
 
             if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
                 formIsValid = false;
-                errors["email"] = "Email is not valid";
+                errors["email"] = "email is not valid";
             }
         }
         this.setState({ errors: errors });
@@ -84,12 +84,8 @@ class Buy extends Component {
 
     render() {
         let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
-        let checkErrorClass =  this.state.errors["name"] ? "inputError" : "";
-
-
-        let checkErrorTextLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
-
-
+        let checkErrorLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
+        let checkErrorEmail = this.state.errors["email"] ? this.state.errors["email"] : "enter e-mail";
 
         return (
             <div>
@@ -98,13 +94,13 @@ class Buy extends Component {
                 </div>
                 <div className="buyPage">
                     <div className="orderSummary"> {/*the order summary div*/}
-                        {!this.state.item ? <div classname="loading"><h1>Loading...</h1></div> : (
+                        {!this.state.item ? <div className="loading"><h1>Loading...</h1></div> : (
                             <div>
                                 <div className="orderText">Order Summary:</div>
                                 <div className="listingStyle">
                                     <img src={this.state.item.imageLocation} alt="" />
-                                    Name: {this.state.item.name} <br />
-                                    Description: {this.state.item.description}<br />
+                                    {this.state.item.name} <br/><br/>
+                                    {this.state.item.description}<br />
                                     $ {this.state.item.price} <br />
                                     Sold by: {this.state.item.sellerId} <br />
                                 </div>
@@ -117,12 +113,13 @@ class Buy extends Component {
                     </div>
                         <div className="buyInputs">
                             <div>
-                                <input className={"justInputs " + checkErrorClass} placeholder={checkErrorText} />
-                                <input className="justInputs" placeholder={checkErrorTextLastName} />
+                                <input className="justInputs" placeholder={checkErrorText} />
+                                <input className="justInputs" placeholder={checkErrorLastName} />
                             </div>
                             <div><input className="justInputs" placeholder="address" /><input className="justInputs" placeholder="city" /></div>
                             <div><input className="justInputs" placeholder="state/province" /><input className="justInputs" placeholder="zip/postal code" /></div>
-                            <div><input className="justInputs" placeholder="country" /><input className="justInputs" placeholder="e-mail" value={this.state.fields["email"]} /></div>
+                            <div><input className="justInputs" placeholder="country" /></div>
+                            <div><input className="justInputs" placeholder={checkErrorEmail}/></div>
                         </div>
                         <div>
                             payment information:

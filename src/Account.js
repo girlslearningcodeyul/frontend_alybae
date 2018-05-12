@@ -50,8 +50,8 @@ class Account extends Component {
         var mapItemsBought = contents =>
             <li className="itemsBought">
                 <img src={contents.imageLocation} alt="" />
-                Name: {contents.name} <br />
-                Description: {this.displayCut(contents.description)}<br />
+                {contents.name} <br />
+                {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
             </li>
@@ -59,8 +59,8 @@ class Account extends Component {
         var mapItemsSold = contents =>
             <li className="itemsSold">
                 <img src={contents.imageLocation} alt="" />
-                Name: {contents.name} <br />
-                Description: {this.displayCut(contents.description)}<br />
+                {contents.name} <br/><br/>
+                {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
             </li>
 

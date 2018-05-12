@@ -44,8 +44,8 @@ class Home extends Component {
         var mapContents = contents =>
             <li className="listingStyle">
                 <img src={contents.imageLocation} alt="" />
-                Name: {contents.name} <br />
-                Description: {this.displayCut(contents.description)}<br />
+                {contents.name} <br/><br/>
+                {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
                 <Link className="buyButton" to={"/buy/" + contents.itemId}><span>buy</span></Link>
@@ -57,10 +57,10 @@ class Home extends Component {
         return (
             <div >
                     <div className="banner1">
-                        <Link className="homeAccountLink" to='/account'>Your account</Link>
-                        <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
-                        <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
-                        <div className ="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                        <Link className="homeAccountLink" to='/account'>YOUR ACCOUNT</Link>
+                        <Link className="homeAllListingsLink" to='/allListings'>ALL LISTINGS</Link>
+                        <Link className="homeCreateListingsLink" to='/create'>CREATE A LISTING</Link>
+                        <div className ="homeLogoutLink"><a href="" onClick="window.location.reload(true)">LOGOUT</a></div>
                     </div>         
                     
                       
