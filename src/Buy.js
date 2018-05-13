@@ -6,8 +6,8 @@ import { NotificationManager } from 'react-notifications';
 // crazines --> setInterval(() => NotificationManager.success('Success message', 'Title here'), 500);
 //create new listing class
 class Buy extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             item: null,
             sellerId: "",
@@ -16,34 +16,29 @@ class Buy extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.props.itemId);
+        //console.log(this.props.itemId);
         fetch("/getItemDetails?itemId=" + this.props.itemId)
             .then(response => response.text())
             .then((responseBody) => {
-                console.log(responseBody);
+                //console.log(responseBody);
                 this.setState({ item: JSON.parse(responseBody) })
             })
     }
 
-    handleBuy = (e) => {
-        e.preventDefault();
-        // if (this.formIsValid === false) return this.createNotificationError();
-        // else {
-        fetch('/buyItem?itemId=' + this.props.itemId + '&userId=' + this.props.username)
-            .then(response => response.text())
-            .then(responseBody => {
-                this.props.historyPush('/account');
-                this.createNotification();
-            })
-
-    }
-
     createNotification = () => {
-        return NotificationManager.success('Success! You bought this thing!');
+        return NotificationManager.success('Success! You bought this wonderful scarf!');
     };
 
     createNotificationError = () => {
-        return NotificationManager.error('Some form parameters are missing');
+        return NotificationManager.error('Look out! Some form parameters are missing or are incorrect');
+    }
+
+    handleChange(field, e) {
+        let fields = this.state.fields;
+        console.log(fields)
+        fields[field] = e.target.value;
+        console.log(fields[field])
+        this.setState({ fields });
     }
 
     //the form validates that all the parameters exist
@@ -55,38 +50,62 @@ class Buy extends Component {
         //Name
         if (!fields["name"]) {
             formIsValid = false;
-            errors["name"] = "cannot be empty";
+            errors["name"] = "Cannot be empty";
         }
 
         if (typeof fields["name"] !== "undefined") {
             if (!fields["name"].match(/^[a-zA-Z]+$/)) {
                 formIsValid = false;
-                errors["name"] = "only letters";
+                errors["name"] = "Only letters";
             }
         }
         //Email
         if (!fields["email"]) {
             formIsValid = false;
-            errors["email"] = "cannot be empty";
+            errors["email"] = "Cannot be empty";
         }
 
-        if (typeof fields["email"] !== "undefined") {
-            let lastAtPos = fields["email"].lastIndexOf('@');
-            let lastDotPos = fields["email"].lastIndexOf('.');
-
-            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
-                formIsValid = false;
-                errors["email"] = "email is not valid";
-            }
-        }
         this.setState({ errors: errors });
+        //console.log(formIsValid);
+        //console.log(fields["name"]);
         return formIsValid;
     }
 
-    render() {
-        //let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
-        //let checkErrorEmail = this.state.errors["email"] ? this.state.errors["email"] : "enter e-mail";
+    handleBuy = (e) => {
+        e.preventDefault();
+        if (!this.handleValidation()) {
+            return this.createNotificationError();
+        }
+        else {
+            fetch('/buyItem?itemId=' + this.props.itemId + '&userId=' + this.props.username)
+                .then(response => response.text())
+                .then(responseBody => {
+                    this.props.historyPush('/account');
+                    this.createNotification();
+                })
+        }
+    }
+    //hey ksenia! this is so coooool! this is the nerdiest chat ever i love it
+    //lets investigate. yeah it really looks perfect, let me think
+    //maybe it wont make sense but have you tried returning something in your if statements?
+    //wow that is an interesting function, the match one on 49
+    //hi rob! I feel kind of creepy when I watch you making changes...o
+    //yes awesome job!!!! I am getting ready for rehearsal, banjo banjo m baanjo... 
+    //i am gonna watch a tutorial on regex - oh yeah I totally used the gi thing before on code wars
 
+
+    //hey Aly! woot! yesh. who needs chat! Totes! 
+    //now what?
+    // I really really really want to get the check fields function to work.... uggghhhh but it's so uncooperative
+    //I cant' seem to do the right check for an empty field (on lines 43 and 49)
+    //rob says hi!!
+    // OH GAAAAAAWD!!! finally!
+    //figured it! 
+    //oh year, the match method is using regex as an input
+    //[^a-zA-Z] means catch any character that IS NOT a-z OR A-Z
+    //it's super powerful, but kind of cryptic:)
+
+    render() {
         return (
             <div>
                 <div className="banner1">
@@ -117,7 +136,12 @@ class Buy extends Component {
                         </div>
                         <div className="buyInputs">
                             <div>
-                                <input className="justInputs" placeholder="first name"// {checkErrorText} 
+                                <input className="justInputs"
+                                    type="text"
+                                    placeholder="first name"
+                                    ref="name"
+                                    onChange={this.handleChange.bind(this, "name")}
+                                    value={this.state.fields["name"]}
                                 />
                                 <input className="justInputs" placeholder="last name" />
                             </div>
@@ -138,10 +162,14 @@ class Buy extends Component {
                                 <option value="12">Northwest Territories</option>
                                 <option value="12">Nunavut</option>
                             </select>
-
                                 <input className="justInputs" placeholder="zip/postal code" /></div>
                             <div><input className="justInputs" placeholder="country" /></div>
-                            <div><input className="justInputs" placeholder="enter e-mail"// {checkErrorEmail} 
+                            <div><input type="text"
+                                refs="email"
+                                className="justInputs"
+                                placeholder="enter e-mail"
+                                onChange={this.handleChange.bind(this, "email")}
+                                value={this.state.fields["email"]}
                             /></div>
                         </div>
                         <div>
@@ -174,7 +202,7 @@ class Buy extends Component {
                             </select>
                             <input className="justInputs" placeholder="CVV" />
                         </div>
-                        <button className='btn-success' onClick={this.handleBuy}>Buy now! </button>
+                        <button className='btn-success' onClick={this.handleBuy.bind(this)}>Buy now! </button>
                     </div>
 
                 </div>

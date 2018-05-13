@@ -122,6 +122,7 @@ _____________________________________________________________
   background-color: #9EEBBF;
   font-size: 17px;
   transform: rotate(3deg);
+  text-align: left;
 }
 
 ul{
@@ -312,6 +313,7 @@ transition: 0.5s;
 
 .buyPage {
   display: inline-block;
+
 }
 /* 
 the following CSS is for the banner

@@ -20,7 +20,7 @@ class Account extends Component {
         fetch('/getItemsBought?userId=' + this.props.username)
             .then(response => response.text())
             .then((items) => {
-                console.log(this.state.itemsBought);
+                //console.log(this.state.itemsBought);
                 this.setState({ itemsBought: JSON.parse(items) })
             })
     }
@@ -28,7 +28,7 @@ class Account extends Component {
         fetch('/getItemsSold?userId=' + this.props.username)
             .then(response => response.text())
             .then((items) => {
-                console.log(items);
+                //console.log(items);
                 this.setState({ itemsSold: JSON.parse(items) })
 
             })
