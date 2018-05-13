@@ -27,14 +27,15 @@ class Buy extends Component {
 
     handleBuy = (e) => {
         e.preventDefault();
-        if (!this.handleValidation()) return this.createNotificationError();
+        // if (this.formIsValid === false) return this.createNotificationError();
+        // else {
         fetch('/buyItem?itemId=' + this.props.itemId + '&userId=' + this.props.username)
             .then(response => response.text())
             .then(responseBody => {
-                //console.log("successfully sent")
-                   this.props.historyPush('/account');
-                    this.createNotification();
-                })
+                this.props.historyPush('/account');
+                this.createNotification();
+            })
+
     }
 
     createNotification = () => {
@@ -42,7 +43,7 @@ class Buy extends Component {
     };
 
     createNotificationError = () => {
-        return NotificationManager.error('Some form parameters are missing'); //make this red
+        return NotificationManager.error('Some form parameters are missing');
     }
 
     //the form validates that all the parameters exist
@@ -83,14 +84,17 @@ class Buy extends Component {
     }
 
     render() {
-        let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
-        let checkErrorLastName = this.state.errors["name"] ? this.state.errors["name"] : "last name";
-        let checkErrorEmail = this.state.errors["email"] ? this.state.errors["email"] : "enter e-mail";
+        //let checkErrorText = this.state.errors["name"] ? this.state.errors["name"] : "first name";
+        //let checkErrorEmail = this.state.errors["email"] ? this.state.errors["email"] : "enter e-mail";
 
         return (
             <div>
                 <div className="banner1">
-                    <Link className="homeLink" to='/home'>Aly-bae</Link>
+                    <Link className="logo" to='/home'></Link>
+                    <Link className="homeAllListingsLink" to='/allListings'>ALL LISTINGS</Link>
+                    <Link className="homeAccountLink" to='/account'>YOUR ACCOUNT</Link>
+                    <Link className="homeCreateListingsLink" to='/create'>CREATE A LISTING</Link>
+                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true)">LOGOUT</a></div>
                 </div>
                 <div className="buyPage">
                     <div className="orderSummary"> {/*the order summary div*/}
@@ -99,7 +103,7 @@ class Buy extends Component {
                                 <div className="orderText">Order Summary:</div>
                                 <div className="listingStyle">
                                     <img src={this.state.item.imageLocation} alt="" />
-                                    {this.state.item.name} <br/><br/>
+                                    {this.state.item.name} <br /><br />
                                     {this.state.item.description}<br />
                                     $ {this.state.item.price} <br />
                                     Sold by: {this.state.item.sellerId} <br />
@@ -110,16 +114,35 @@ class Buy extends Component {
                     <div className="paymentForm">
                         <div>
                             shipping information:
-                    </div>
+                        </div>
                         <div className="buyInputs">
                             <div>
-                                <input className="justInputs" placeholder={checkErrorText} />
-                                <input className="justInputs" placeholder={checkErrorLastName} />
+                                <input className="justInputs" placeholder="first name"// {checkErrorText} 
+                                />
+                                <input className="justInputs" placeholder="last name" />
                             </div>
                             <div><input className="justInputs" placeholder="address" /><input className="justInputs" placeholder="city" /></div>
-                            <div><input className="justInputs" placeholder="state/province" /><input className="justInputs" placeholder="zip/postal code" /></div>
+                            <div><select>
+                                <option value="">Select Province</option>
+                                <option value="AB">Alberta</option>
+                                <option value="BC">British Columbia </option>
+                                <option value="03">Ontario</option>
+                                <option value="04">Quebec</option>
+                                <option value="05">Saskatchewan</option>
+                                <option value="06">Manitoba</option>
+                                <option value="07">PEI</option>
+                                <option value="08">Newfoundland</option>
+                                <option value="09">Nova Scotia</option>
+                                <option value="10">New Brunswick</option>
+                                <option value="11">Yukon</option>
+                                <option value="12">Northwest Territories</option>
+                                <option value="12">Nunavut</option>
+                            </select>
+
+                                <input className="justInputs" placeholder="zip/postal code" /></div>
                             <div><input className="justInputs" placeholder="country" /></div>
-                            <div><input className="justInputs" placeholder={checkErrorEmail}/></div>
+                            <div><input className="justInputs" placeholder="enter e-mail"// {checkErrorEmail} 
+                            /></div>
                         </div>
                         <div>
                             payment information:

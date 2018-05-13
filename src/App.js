@@ -19,17 +19,17 @@ class App extends Component {
             username: undefined,
         }
     }
-    componentDidMount () {
-        console.log("ASD")
-        fetch("/checkLoginCookieMethod", {credentials: "same-origin"})
-        .then(e=>e.text())
-        .then(e=>JSON.parse(e))
-        .then(e=>{
-            console.log(e)
-        })
-    }
 
-     renderHome = () => {
+    // componentDidMount () {
+    //     fetch("/checkLoginCookieMethod", {credentials: "same-origin"}) //check login cookie method
+    //     .then(e=>e.text())
+    //     .then(e=>JSON.parse(e))
+    //     .then(e=>{
+    //         console.log(e)
+    //     })
+    // }
+
+    renderHome = () => {
         return <Home />;
     }
 
@@ -40,7 +40,7 @@ class App extends Component {
     renderBuy = (routeProps) => {
         console.log(routeProps);
         let key = routeProps.match.params.key;
-        return <Buy itemId={key} historyPush={routeProps.history.push} />
+        return <Buy itemId={key} username={this.state.username} historyPush={routeProps.history.push} />
     }
 
     renderAllListings = () => {
@@ -51,8 +51,8 @@ class App extends Component {
         return <Create username={this.state.username} historyPush={routeProps.history.push} />
     }
 
-    setUsername = (username, sessionID) => {
-        this.setState({ username, sessionID }) //is equivalent to username: username
+    setUsername = (username) => {
+        this.setState({ username }) //is equivalent to username: username
     }
 
     renderLogin = (routeProps) => {

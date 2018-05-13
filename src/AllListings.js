@@ -25,8 +25,7 @@ class AllListings extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let listings = JSON.parse(responseBody);
-                console.log(listings);
-
+                //console.log(listings);
                 this.setState({ listings, searchResults: listings, loaded: true });
             })
     }
@@ -63,7 +62,7 @@ class AllListings extends Component {
 
     displayCut = (description) => {
         if (description.length > 20) {
-            let substr = description.substr(0,30);
+            let substr = description.substr(0, 30);
             return substr + "...";
         }
         else return description;
@@ -74,7 +73,7 @@ class AllListings extends Component {
         var mapContents = contents =>
             <li className="listingStyle">
                 <img src={contents.imageLocation} alt="" />
-                {contents.name} <br/><br/>
+                {contents.name} <br /><br />
                 {this.displayCut(contents.description)}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
@@ -87,21 +86,23 @@ class AllListings extends Component {
             <div>
                 <div>
                     <div className="banner1">
-                        <Link className="homeLink" to='/home'>Aly-bae</Link>
-                        <Link className="homeAccountLink" to='/account'>Your account</Link>
-                        <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
+                        <Link className="logo" to='/home'></Link>
+                        <Link className="homeAllListingsLink" to='/allListings'>ALL LISTINGS</Link>
+                        <Link className="homeAccountLink" to='/account'>YOUR ACCOUNT</Link>
+                        <Link className="homeCreateListingsLink" to='/create'>CREATE A LISTING</Link>
+                        <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true)">LOGOUT</a></div>
                     </div>
-                    <div className="logout"><a href="" onClick="window.location.reload(true);">Logout</a></div>                    
+
                     <div className="searchOutline">
                         <div className="searchBar">
                             <input type="text"
-                                placeholder="search by name!"
+                                placeholder="search by name"
                                 onChange={this.searchItemsByName}>
                             </input>
                         </div>
                         <div className="searchBarLowRange">
                             <input type="text"
-                                placeholder="Set lowest price"
+                                placeholder="set lowest price"
                                 onChange={this.searchItemsLowPriceRange}>
                             </input>
                         </div>

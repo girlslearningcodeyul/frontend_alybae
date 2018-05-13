@@ -41,13 +41,15 @@ class Login extends Component {
             password: this.state.inputPasswordValue
         })
 
-        fetch('/login', { method: "POST", credentials: "same-origin", body: body }) //same origin is for the cookies to be stored on the client side
+        fetch('/login', { method: "POST", body: body })
+        //credentials: "same-origin", 
+        //same origin is for the cookies to be stored on the client side
             .then(response => response.text())
             .then(responseBody => {
                 let parsed = JSON.parse(responseBody)
                 let sessionID = parsed.sessionID
                 if (sessionID) {
-                    //this.setState({ sessionID: sessionID }) do not need to sent this anymore if using cookies
+                    this.setState({ sessionID: sessionID }) //do not need to sent this anymore if using cookies
                     this.props.setUsername(this.state.inputUsernameValue, this.state.sessionID); //call the App method setUsername to check whether it is defined and could be used as a parameter in App.js
                     this.props.historyPush('/home');
                     this.createNotificationLogin();
@@ -88,7 +90,7 @@ class Login extends Component {
                 </input>
                 </div>
                 <div>
-                    <input className="inputLogin" type="text" placeholder="password"
+                    <input className="inputLogin"  placeholder="password" type="password"
                         onChange={this.handlePasswordChange}
                         value={this.inputPasswordValue}>
                     </input>
@@ -108,7 +110,7 @@ class Login extends Component {
                 </input>
                 </div>
                 <div>
-                    <input className="inputLogin" type="text" placeholder=" new password"
+                    <input className="inputLogin" placeholder=" new password" type="password"
                         onChange={this.handlePasswordCreate}
                         value={this.inputPasswordCreate}>
                     </input>

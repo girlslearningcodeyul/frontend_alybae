@@ -6,6 +6,13 @@ body{
 
 }
 
+.logo{
+  background-image: url(images/logo1.png);
+  grid-column: 1/4;
+  grid-row: 2/3;
+  
+}
+
 /* 
 the following CSS is or the login/create account landing page
 _____________________________________________________________
@@ -58,7 +65,7 @@ _____________________________________________________________
   margin:20px auto;
   display:block;
   cursor:pointer;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica;
   position: relative;
 
 }
@@ -73,22 +80,20 @@ _____________________________________________________________
   padding:15px;
   background:rgba(0,0,0,0.4);
   border:0;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica;
   letter-spacing: 1.5px;
 }
 
 
 .inputLogin::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica;
   font-style: none;
 }
 
 span{
   font-size: 15px;
 }
-/* .logout{
-} */
 
 /* 
 the following CSS is or the items for sale
@@ -123,29 +128,74 @@ ul{
   list-style-type: none;
 }
 
-/* Spiffin' out the links in the create page 
+/* Spiffin' out the links in the banner 
 -----------------------------------------------------------------------
 */
-.createItemHomeLink{
-  color:rgb(3, 52, 73);
-  grid-column: 4/7;
-  grid-row: 2/3;
+.homeAccountLink{
+  grid-column: 13/16;
+  grid-row: 2/3;;
+  color: rgb(3, 52, 73);
   border-color:#FCBCB8;
   border-style: double;
   border-radius: 25%;
-  border-width: 20px;
+  border-width: 25px;
+  text-align: center;
+  padding-top:5px;
+  text-decoration: none;
+  text-shadow:0 1px 1px rgba(0,0,0,.4); 
 }
+
 .homeAllListingsLink{
   color: rgb(4, 44, 61);
-  grid-column: 8/11;
+  grid-column: 9/12;
   grid-row: 2/3;
   border-color:#FCBCB8;
   border-style: double;
   border-radius: 25%;
   border-width: 20px;
+  text-align: center;
+  padding-top:5px;
+  text-decoration: none;
+  text-shadow:0 1px 1px rgba(0,0,0,.4); 
 }
 
+.homeCreateListingsLink{
+  grid-column: 17/20;
+  grid-row: 2/3;;
+  color: rgb(5, 53, 73);
+  border-color:#FCBCB8;
+  border-style: double;
+  border-radius: 25%;
+  border-width: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow:0 1px 1px rgba(0,0,0,.4); 
+  }
 
+  .homeLogoutLink {
+    grid-column: 21/24;
+    grid-row: 2/3;;
+    color: rgb(5, 53, 73);
+    border-color:#FCBCB8;
+    border-style: double;
+    border-radius: 25%;
+    border-width: 20px;
+    text-align: center;
+    padding-top:20px;
+    text-decoration: none;
+    text-shadow:0 1px 1px rgba(0,0,0,.4); 
+    }
+
+      a {
+        text-decoration: none;
+        text-shadow:0 1px 1px rgba(0,0,0,.4); 
+        color:rgb(3, 52, 73);
+        
+      }
+
+/* done with the links
+-----------------------------------------------------------------------
+*/
 
 /* these be for AllListings Spiffyness
 
@@ -158,50 +208,14 @@ ul{
   grid-template-columns: repeat(24 ,1fr);
   grid-template-rows: repeat(3, 1fr);
   width: 65%;
-  height:6rem;
-  background-color:#ff7347;  
+  height:7rem;
+  background-color:#F3B3A3;
   margin:7px auto;
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
 }
-.homeLink {
-  grid-column: 4/7;
-  grid-row: 2/3;
-  color:rgb(3, 52, 73);
-  border-color:#FCBCB8;
-  border-style: double;
-  border-radius: 25%;
-  border-width: 20px;
-}
-.homeAccountLink{
-  grid-column: 13/16;
-  grid-row: 2/3;;
-  color: rgb(3, 52, 73);
-  border-color:#FCBCB8;
-  border-style: double;
-  border-radius: 25%;
-  border-width: 20px;
-}
-.homeCreateListingsLink{
-  grid-column: 17/20;
-  grid-row: 2/3;;
-  color: rgb(5, 53, 73);
-    border-color:#FCBCB8;
-    border-style: double;
-    border-radius: 25%;
-    border-width: 20px;
-  }
-.homeLogoutLink {
-  grid-column: 21/24;
-  grid-row: 2/3;;
-  color: rgb(5, 53, 73);
-    border-color:#FCBCB8;
-    border-style: double;
-    border-radius: 25%;
-    border-width: 20px;
-  }
 
 
   /* Now for the search outline and child elements */
@@ -211,7 +225,7 @@ ul{
     grid-template-columns: repeat(12 ,1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 65%;
-    height:6rem;
+    height:4rem;
     margin:7px auto;
     -webkit-box-shadow: 0 1px 3px rgba(133, 34, 34, 0.5);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -239,11 +253,6 @@ ul{
     grid-row: 2/3;
     border-radius: 50%;
   }
-/* input::placeholder {
-  color: lightskyblue;
-  font-size: 1.2em;
-  font-style: italic;
-} */
 
 /* input[type=text]{
 padding: 10px;
@@ -254,23 +263,13 @@ border-top-color: red;
 border-bottom-color: blueviolet;
 } */
 
-/*  Styling the Account home link*/
-.accountHomeLink{
-  color:rgb(3, 52, 73);
-  grid-column: 4/7;
-  grid-row: 2/3;
-  border-color:#FCBCB8;
-  border-style: double;
-  border-radius: 25%;
-  border-width: 20px;
-}
 /* 
 the following CSS is for the buy button animation
 _____________________________________________________________
 */
 .buyButton{
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #FB7445;
   border: none;
   color: #000;
   text-align: left;
@@ -332,7 +331,6 @@ img{
   margin-bottom: 20px;
   border-style: dashed;
   border-color: #F7EEEE;
-  
 }
 
 /* 
@@ -355,7 +353,7 @@ margin-right:30px;
   background-color: transparent;
   text-transform: uppercase;
   margin-top: 40px; /*specifies the offset or the ORDER SUMMARY text from the top*/
-  margin-left:60px;
+  margin-left:100px;
 }
 
 .paymentForm{
@@ -397,7 +395,7 @@ _____________________________________________________________
   border-radius: 10%; 
   border: 2px solid #fff;
   color: #000; 
-  height: 300px;
+  height: 400px;
   width: 400px;
   padding: 50px;
   margin: auto;
@@ -408,6 +406,43 @@ _____________________________________________________________
 
 .listingForm input[type="button"]:hover, 
 .listingForm input[type="submit"]:hover {
-    background:linear-gradient(to bottom, #f4511e 5%, #f4511e 100%);
-    background-color: #f4511e;
+    background:linear-gradient(to bottom, #FB8C74 5%, #FB8C74 100%);
+    background-color: #FB8C74;
+}
+
+.uploadImageText{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h4{
+  margin: 0, auto;
+  margin-left: 300px;
+  margin-top:50px;
+  text-decoration: none;
+}
+
+textarea::placeholder {
+  color: grey;
+  font-family: Helvetica;
+  font-style: none;
+  margin:20px;
+} 
+
+.itemsBoughtSold{
+  border-color:#9EEBBF;
+  display: grid; 
+  grid-template-columns: repeat(1 ,1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: 65%;
+  height:4rem;
+  margin:auto;
+  text-align: center;
+  padding-top:30px;
+  -webkit-box-shadow: 0 1px 3px rgba(133, 34, 34, 0.5);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  text-shadow:0 1px 1px rgba(0,0,0,.4); 
+
 }

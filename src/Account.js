@@ -38,20 +38,13 @@ class Account extends Component {
         if (price === 0) return 'free';
         else return price;
     }
-    //the following function is to display the first 20 characters of an item's desciption
-    displayCut = (description) => {
-        if (description.length > 20) {
-            let substr = description.substr(0, 30);
-            return substr + "...";
-        }
-        else return description;
-    }
+
     render() {
         var mapItemsBought = contents =>
             <li className="itemsBought">
                 <img src={contents.imageLocation} alt="" />
-                {contents.name} <br />
-                {this.displayCut(contents.description)}<br />
+                {contents.name} <br /><br />
+                {contents.description}<br />
                 $ {this.displayFree(contents.price)} <br />
                 Sold by: {contents.sellerId} <br />
             </li>
@@ -59,8 +52,8 @@ class Account extends Component {
         var mapItemsSold = contents =>
             <li className="itemsSold">
                 <img src={contents.imageLocation} alt="" />
-                {contents.name} <br/><br/>
-                {this.displayCut(contents.description)}<br />
+                {contents.name} <br /><br />
+                {contents.description}<br />
                 $ {this.displayFree(contents.price)} <br />
             </li>
 
@@ -70,23 +63,23 @@ class Account extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link className="accountHomeLink" to='/home'>Aly-bae</Link>
-                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
-                    <Link className="homeCreateListingsLink" to='/create'>Create a listing</Link>
-                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                    <Link className="logo" to='/home'></Link>
+                    <Link className="homeAllListingsLink" to='/allListings'>ALL LISTINGS</Link>
+                    <Link className="homeAccountLink" to='/account'>YOUR ACCOUNT</Link>
+                    <Link className="homeCreateListingsLink" to='/create'>CREATE A LISTING</Link>
+                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true)">LOGOUT</a></div>
                 </div>
-                <div>
-                    Items Bought:
-                    <ul>
-                        {itemsBought}
-                    </ul>
-                </div>
-                Items Sold:
-                <div>
-                    <ul>
-                        {itemsSold}
-                    </ul>
-                </div>
+
+                <div className="itemsBoughtSold"> ITEMS YOU'VE BOUGHT:</div>
+                <ul>
+                    {itemsBought}
+                </ul>
+
+                <div className="itemsBoughtSold">ITEMS YOU'VE SOLD:</div>
+                <ul>
+                    {itemsSold}
+                </ul>
+
             </div>
         )
     }

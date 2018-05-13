@@ -66,17 +66,17 @@ class Create extends Component {
                         </input>
                         <div></div>
                         Description:
-                        <input type="text" className="justInputs" placeholder="describe it"
+                        <textarea rows="4" cols="50" placeholder="describe your item"
                             onChange={this.handleDesc}
                             value={this.description}>
-                        </input>
+                        </textarea>
                         <div></div>
                         Enter Price:
                         <input type="text" className="justInputs" placeholder="how much or free?"
                             onChange={this.handlePrice}
                             value={this.price}>
                         </input>
-                        <div>Upload an image:</div>
+                        <div className="uploadImageText">Upload an image:</div>
 
                         <input type="file" id="input" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
@@ -89,10 +89,11 @@ class Create extends Component {
         return (
             <div>
                 <div className="banner1">
-                    <Link className="createItemHomeLink" to='/home'>Aly-bae</Link>
-                    <Link className="homeAccountLink" to='/account'>Your account</Link>
-                    <Link className="homeAllListingsLink" to='/allListings'>All listings</Link>
-                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true);">Logout</a></div>
+                    <Link className="logo" to='/home'></Link>
+                    <Link className="homeAllListingsLink" to='/allListings'>ALL LISTINGS</Link>
+                    <Link className="homeAccountLink" to='/account'>YOUR ACCOUNT</Link>
+                    <Link className="homeCreateListingsLink" to='/create'>CREATE A LISTING</Link>
+                    <div className="homeLogoutLink"><a href="" onClick="window.location.reload(true)">LOGOUT</a></div>
                 </div>
                 <div>
                     <div className="createListing">{this.createListing()}</div>
